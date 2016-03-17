@@ -1,16 +1,41 @@
 \section{FSM}
 \label{sec:fsm}
 
-Hallo?
+Wir betrachten nun etwas genauer wir unsere Konzept einer FSM zur 
+Kontrollflusssteurung in C++11 umgesetzt haben, dazu gehört neben der Wahl 
+der Klassenstruktur auch die Einbindung nützlicher Features von C++11 um die
+Speicherverwaltung zu optimieren.
+
 
 %%%%%%
-\subsection{Noch grundlegender}
+\subsection{Klassenstruktur}
+Zur Modellierung einer FSM haben wir ein Konzept aus einer Kontroller Klasse \texttt{FSM} und zwei abstrakten Basisklassen \texttt{State} und \texttt{Transition} überlegt. Dabei stellen die abstrakten Basisklassen nur eine standardisiertes Interface bereit und erlauben somit einen schnelle Implementation von neuen abgeleiteten Klassen.
+
+
+Erst die abgeleiteten Klassen implementieren eine genau Funktionalität, wie z.B. einer Wandfolgen oder eine Transition nach einem bestimmten Ereignis. Diese Klassen sind in dem dafür vorgesehen namespace \texttt{TRAL::STATES} und \texttt{TRAL::TRANSITIONS} zu finden.
+
+
+%%%%%%
+\subsubsection{FSM}
+Die Klasse \texttt{FSM} implementiert die komplette Kontrollflusssteuerung und kümmert sich ebenso um das Laden einer FSM die zuvor graphisch mit Umlet erstellt wurde. Ebenso hält diese Klasse immer eine aktuelle Referenz zum dem globalen \texttt{MachineState}, in dieser Klasse sind alle Sensorinformationen aufbereitet konsolidiert.
+
+\paragraph{\texttt{FSM::tick}}
+
+Die wichtigste Funktion diese Klasse ist die \texttt{tick} Funktion, diese wird zyklisch von der Rosnode tral-fsm aufgerufen. Dabei wird der Kontrollfluss an den aktuell aktiven State weitergeben. Wenn nun der aktive State einen neuen Ausgabe gesetzt hat und die Kontrolle wieder abgibt werden nun alle an diesen State befindlichen Transition überprüft ob diese Ausgelöst haben, sollte dies der Fall sein wird eine \texttt{transit} vollzogen.
+
+\paragraph{\texttt{FSM::transit}}
+
+Beim Statewechsel wird zuerst dem aktuell noch aktiven State signalisiert das der nun verlassen wird, dabei kann der State
+zum Beispiel genutzte Ressourcen wieder freigeben. Darauffolgend wird dem neuen State signalisiert das dieser nun betreten wird und nötige Ressourcen belegen kann.
+
+
+%%%%%%
+\subsubsection{State}
 Text
 
-%%%%%%
-\subsubsection{Grundlage?}
-Test
 
 %%%%%%
-\subsubsection{GRUNDLAGE!}
+\subsubsection{Transition}
 Text
+
+\subsection{Deserialisieren}
