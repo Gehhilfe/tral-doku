@@ -2,10 +2,7 @@
 \contentsline {section}{\numberline {1}Einleitung}{1}
 \contentsline {subsection}{\numberline {1.1}Ne Ebene tiefer}{1}
 \contentsline {subsubsection}{\numberline {1.1.1}Undsoweiter}{1}
-\contentsline {section}{\numberline {2}Grundlegendes zur HW des Auto}{2}
-\contentsline {subsection}{\numberline {2.1}Noch grundlegender}{2}
-\contentsline {subsubsection}{\numberline {2.1.1}Grundlage?}{2}
-\contentsline {subsubsection}{\numberline {2.1.2}GRUNDLAGE!}{2}
+\contentsline {section}{\numberline {2}Zur Verf\IeC {\"u}gung gestellte Hardware des Autos}{2}
 \contentsline {section}{\numberline {3}Grundlegendes zu \textit {ROS} und Lubuntu}{3}
 \contentsline {subsection}{\numberline {3.1}Was ist \textit {ROS}?}{3}
 \contentsline {subsubsection}{\numberline {3.1.1}Wie ist \textit {ROS} aufgebaut?}{3}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.16)  20 MAR 2016 11:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.16)  20 MAR 2016 12:52
 entering extended mode
 **./TUDthesis.tex
 (TUDthesis.tex
@@ -1246,16 +1246,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--70
 ] (TUDthesis.toc
 
 LaTeX Font Warning: Font shape `T1/5fp/mb/it' undefined
-(Font)              using `T1/5fp/mb/n' instead on input line 9.
+(Font)              using `T1/5fp/mb/n' instead on input line 6.
 
 
 LaTeX Font Warning: Font shape `T1/5ch/m/it' undefined
-(Font)              using `T1/5ch/m/n' instead on input line 10.
+(Font)              using `T1/5ch/m/n' instead on input line 7.
 
-
-Underfull \vbox (badness 1325) has occurred while \output is active []
-
- [1
+[1
 
 
 
@@ -1263,8 +1260,7 @@ Underfull \vbox (badness 1325) has occurred while \output is active []
 \tf@toc=\write3
 \openout3 = `TUDthesis.toc'.
 
-
-[2] (TUDthesis.lof)
+ [2] (TUDthesis.lof)
 \tf@lof=\write4
 \openout4 = `TUDthesis.lof'.
 
@@ -1278,11 +1274,11 @@ Underfull \vbox (badness 1325) has occurred while \output is active []
  [4
 
 
-] (chapters/Einleitung.tex) [1
+] (chapters/Einleitung.tex)
+[1
 
 
-]
-(chapters/GrundlegendesZurHW.tex) [2
+] (chapters/GrundlegendesZurHW.tex) [2
 
 
 ] (chapters/GrundlegendesZuROS.tex
@@ -1355,7 +1351,7 @@ Here is how much of TeX's memory you used:
  12812 multiletter control sequences out of 15000+200000
  31697 words of font info for 58 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 65i,12n,77p,873b,499s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 65i,12n,77p,1471b,499s stack positions out of 5000i,500n,10000p,200000b,50000s
 {A:/Latex/fonts/enc/dvips/fontname/texnansi.enc} <C:\Users\xrobe_000\AppData\
 Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk> <C:\Users\xrob
 e_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> 
@@ -1370,9 +1366,9 @@ Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi690\ecrm1000.pk> <C:\Users
 dpi600\ecrm1200.pk><A:/Latex/fonts/type1/bitstrea/charter/bchr8a.pfb><A:/Latex/
 fonts/type1/mathdesign/mdbch/md-chr7y.pfb><A:/Latex/fonts/type1/public/txfonts/
 t1xtt.pfb>
-Output written on TUDthesis.pdf (22 pages, 196833 bytes).
+Output written on TUDthesis.pdf (22 pages, 197528 bytes).
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
+ 451 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  35 words of extra memory for PDF output out of 10000 (max. 10000000)
 
