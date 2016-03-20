@@ -10,26 +10,21 @@ Als Pflichtteil des Projektseminars wurde generell das Thema "`Autonomes Fahren 
 Aus dem Standardprogramm abgeleitet haben wir aufgrund der örtlichen Rahmenbedingungen festgelegt, dass sich unser Auto autonom in der vorgegebenen Umgebung bewegen können soll. 
 Wir haben folgende Annahmen zur Aufgabenstellung getroffen:
 \begin{itemize}
-	\item Das Auto hat mindestens eine Wand rechts oder links von sich, zu der es seinen Abstand absolut bestimmen kann
+	\item Das Auto hat mindestens eine Wand rechts oder links von sich, zu der es seinen Abstand mittels des Ultraschallsensors absolut bestimmen kann
 	\item Es wird lediglich mit der vorgegebenen Hardware eine Realisierung des autonomen Fahrens durchgeführt, sodass unser Code auch von nachfolgenden Gruppen einfach genutzt werden kann
 	\item Das autonome Fahren wird durch einen Zustandsautomaten realisiert
 	\item ArUco-Tore bestehen aus zwei Markern, die in beliebigem Abstand (jedoch begrenzt durch den Kamerablickwinkel) voneinander nebeneinander im Flur stehen
 	\item Der Winkel von der Verbindungsgerade zwischen den Markern und den Normalen auf den Markern ist nahe $90^\circ$
-	\item Es ist kein starkes Gegenlicht vorhanden, da dies den Kontrast der Kamera stark beeinträchtigt
-	\item Die AruCo-Tore befinden sich im gleichen Umfeld, das auch für das autonome Fahren definiert ist
+	\item Es ist kein starkes Gegenlicht vorhanden, da dies den Kontrast der Kamera und damit die Erkennung der ArUco-Marker stark beeinträchtigt
+	\item Beim Durchfahren von ArUco-Toren befindet sich entweder rechts oder links des Autos eine Wand, zu der das Auto seinen Abstand mittels Ultraschallsensorik absolut bestimmen kann
 \end{itemize}
 
 %%%%%%
 \subsubsection{Vertiefungspakete}
 Als optionale Vertiefungspakete wurden "`\textit{ROS}-basierte Simulation"', "`Fernsteuerung und Car-2-Car Kommunikation"', sowie "`Inertialsensorik und erweiterte Regelung"' vorgeschlagen.
 
-Von den vorgeschlagenen Möglichkeiten aufgegriffen:
-Regelung: für tordurchfahrt
-graphisches Programmierung
-Zustandsautomat
-XBOX-Kontroller (Hobit)
-
-
-%%%%%%
-\subsubsection{GRUNDLAGE!}
-Text
+Von den vorgeschlagenen Möglichkeiten haben wir die Fernsteuerung, sowie die erweiterte Regelung aufgegriffen. Bezüglich der Fernsteuerung haben wir im Rahmen der Hobit-Berufsbildungsmesse eine Steuerung mittels XBOX-Controller eingebunden. Dieses Projekt wurde jedoch nicht weitergehend verfolgt, da es auf einem anderen Kernel lief, wie unsere Hauptimplementierung. 
+Als erweiterte Regelung haben wir uns als Ziel gesetzt, eine Regelung nach einer linearen Funktion zu implementieren, mittels welcher auch die Durchfahrt der ArUco-Tore realisiert werden soll. Dazu haben wir die Annahme getroffen, dass sich das Auto rechts oder links entlang einer Wand bewegt, zu der der Abstand linear zu- oder abnehmen soll. 
+Als Schwerpunkt haben wir uns als Ziel gesetzt, ein System zur modularen Programmierung des Autos zu entwickeln, das es ermöglicht, beliebige Funktionsbausteine zu programmieren und einfach zur Funktionalität des Autos hinzuzufügen. Dies schafft eine größtmögliche Flexibilität und Erweiterbarkeit der Software des Autos. 
+Zur Implementierung des Systems haben wir uns für einen Zustandsautomaten entschieden, der, um Logik und Implementierung zu trennen, mit einer \textit{JSON}-Datei parametrisiert werden soll. 
+Aufbauend auf oben beschriebene Funktionalität und um das Verhalten des Autos noch einfacher festzulegen, wurde im Laufe des Projektseminars das Ziel der graphischen Programmierung mittels eines \textit{UML}-Tool entwickelt.
