@@ -31,7 +31,26 @@ zum Beispiel genutzte Ressourcen wieder freigeben. Darauffolgend wird dem neuen 
 
 %%%%%%
 \subsubsection{State}
-Text
+Die Klasse \texttt{TRAL::State} ist eine abstrakte Basisklasse von dieser werden alle States abgeleitet, für unsere implementation wurden zum Beispiel folgende States abgeleitet:
+
+\begin{itemize}
+	\item ApproachPoint
+	\item ArucoGateCenter
+	\item BasisFollowWall
+	\begin{itemize}
+		\item FollowWall
+		\item FollowWallRamp
+	\end{itemize}
+	\item Idle
+	\item Motor
+	\item Stop
+\end{itemize}
+
+Jeder instantiierbarer State muss alle virtuellen Funktion der State Klasse implementieren. Dadurch wird gewährleistet das die FSM Klasse mit jede beliegen State Implementation arbeiten kann.
+
+Die statische Funktion \texttt{createFromJson} erlaubt ein State Instanz aus einem json Objekt erzeugen, dazu mehr unter \ref{fsm-Deserialisieren}. Als virtuelles Interface sind die Funktion \texttt{tick}, \texttt{onEnter}, \texttt{OnExit} und weitere Debug-Funktionen vorgesehen.
+
+\texttt{onEnter} und \texttt{OnExit} signalisieren das zuvor beschriebene betreten und verlassen eines States bei der Ausführung. Die Funktion \texttt{tick} wird für den aktiven State zyklisch ausgeführt und berechnet einen neuen Ausgabevektor.
 
 
 %%%%%%
@@ -39,3 +58,4 @@ Text
 Text
 
 \subsection{Deserialisieren}
+\label{fsm-Deserialisieren}
