@@ -45,9 +45,20 @@
 
 \section{JSON}
 \label{sec:json}
-Da bei unserer Lösung die Logik zur Steuerung des Autos, also der Zustandsautomat, von der konkreten Implementierung getrennt wird, benötigten wir eine Möglichkeit diesen Automaten zu erstellen, zu speichern und einzulesen.
-Unsere Wahl fiel auf die „JavaScript Object Notation“ (JSON), einem einfachen und kompakten Datenformat, welches alle benötigten Funktionalitäten mitbringt und für das es bereits einige Parser für verschiedene Programmiersprachen gibt. Hauptsächlich war unsere Wahl allerdings durch die einfache Lesbarkeit des Codes begründet, da wir zu Beginn des Projektes die Automaten per Hand eintippten.
-Eine JSON-Datei besteht im Wesentlichen aus Objekten, welche in geschweiften Klammern gekapselt sind. Diese Objekte bestehen aus beliebig vielen Eigenschaften, die einen eindeutigen Schlüssel und einen zugeordneten Wert haben. Arrays von Objekten sind in eckigen Klammern eingeschlossen. Eine vereinfachte Ansicht eines Automaten könnte also so aussehen:
+Da bei unserer Lösung die Logik zur Steuerung des Autos, also der
+Zustandsautomat, von der konkreten Implementierung getrennt wird, benötigten
+wir eine Möglichkeit diesen Automaten zu erstellen, zu speichern und einzulesen.
+Unsere Wahl fiel auf die „\textbf{JavaScript Object Notation}“ (\textit{JSON}), einem
+einfachen und kompakten Datenformat, welches alle benötigten Funktionalitäten
+mitbringt und für das es bereits einige Parser in verschiedenen
+Programmiersprachen gibt. Hauptsächlich war unsere Wahl allerdings durch die
+einfache Lesbarkeit des Codes begründet, da wir zu Beginn des Projektes die
+Automaten per Hand eintippten.
+Eine JSON-Datei besteht im Wesentlichen aus Objekten, welche in geschweiften
+Klammern gekapselt sind. Diese Objekte bestehen aus beliebig vielen
+Eigenschaften, die einen eindeutigen Schlüssel und einen zugeordneten Wert
+haben. Arrays von Objekten sind in eckigen Klammern eingeschlossen. Eine
+vereinfachte Ansicht eines Automaten könnte also so aussehen:
 
 \begin{figure}[thp]
 \begin{tabular}{c}
@@ -71,9 +82,16 @@ Eine JSON-Datei besteht im Wesentlichen aus Objekten, welche in geschweiften Kla
 \end{lstlisting}
 \end{tabular}
 \centering
-\caption{Bla}
+\caption{Aufbau einer einfachen JSON-Datei}
 \end{figure}
-Um diese JSON-Datei zu deserialisieren, also konkrete Objekte unserer Zustände und Transitionen zu erstellen, benötigten wir einen Parser der dazu in der Lage ist. Wir verwenden hierzu die JSON-Library „JSON for modern C++“ von Niels Lohmann(Quelle).
-Die komplette Implementierung dieser Library befindet sich in einer einzigen Datei, der „json.hpp“, die in unserer „FSM.cpp“ inkludiert wird.
-Für unsere Zwecke verwenden wir den Iterator der Library um mittels for-Schleife über alle Zustände und Transitionen iterieren zu können und die „parse“-Funktion um aus gegebenen Strings ein JSON-Objekt erstellen zu können.
+
+Um diese JSON-Datei zu deserialisieren, also konkrete Objekte unserer Zustände
+und Transitionen zu erstellen, benötigten wir einen Parser der dazu in der Lage
+ist. Wir verwenden hierzu die JSON-Library „\textbf{JSON for modern C++}“ \footnote[1]{https://github.com/nlohmann/json} von Niels
+Lohmann.
+Die komplette Implementierung dieser Library befindet sich in einer einzigen
+Datei, der „\textbf{json.hpp}“, die in unserer „\textbf{FSM.cpp}“ inkludiert wird.
+Für unsere Zwecke verwenden wir den Iterator der Library um mittels
+for-Schleife über alle Zustände und Transitionen iterieren zu können und die
+„\textit{parse}“-Funktion um aus gegebenen Strings ein JSON-Objekt erstellen zu können.
 Der genaue Vorgang des Einlesens wird im nächsten Abschnitt erläutert.
