@@ -31,11 +31,52 @@ zum Beispiel genutzte Ressourcen wieder freigeben. Darauffolgend wird dem neuen 
 
 %%%%%%
 \subsubsection{State}
-Text
+Die Klasse \texttt{TRAL::State} ist eine abstrakte Basisklasse von dieser werden alle States abgeleitet, für unsere implementation wurden zum Beispiel folgende States abgeleitet:
+
+\begin{itemize}
+	\item ApproachPoint
+	\item ArucoGateCenter
+	\item BasisFollowWall
+	\begin{itemize}
+		\item FollowWall
+		\item FollowWallRamp
+	\end{itemize}
+	\item Idle
+	\item Motor
+	\item Stop
+\end{itemize}
+
+Jeder instantiierbarer State muss alle virtuellen Funktion der State Klasse implementieren. Dadurch wird gewährleistet das die FSM Klasse mit jede beliegen State Implementation arbeiten kann.
+
+Die statische Funktion \texttt{createFromJson} erlaubt ein State Instanz aus einem JSON Objekt erzeugen, dazu mehr unter \ref{fsm-Deserialisieren}. Als virtuelles Interface sind die Funktion \texttt{tick}, \texttt{onEnter}, \texttt{OnExit} und weitere Debug-Funktionen vorgesehen.
+
+\texttt{onEnter} und \texttt{OnExit} signalisieren das zuvor beschriebene betreten und verlassen eines States bei der Ausführung. Die Funktion \texttt{tick} wird für den aktiven State zyklisch ausgeführt und berechnet einen neue Ausgabe. Dabei kann über den globalen \texttt{MachineState} auf die aktuellen Sensorwerte zugegriffen und die Aktoren angesteuert.
 
 
 %%%%%%
 \subsubsection{Transition}
-Text
+Ähnlich der State Klasse fungiert die \texttt{TRAL::Transition} als abstrakte Basisklasse für alle Transitionen. Ebenso existiert auch eine statische Funktion \texttt{createFromJson} um gespeicherte Instanz aus einem JSON Objekt zu laden. 
+
+Jede Transition gehört zu einen eindeutigen Besitzer \textit{owner} und zu einem eindeutigen Ziel \textit{target}. Sollte der \textit{owner} State aktuell aktiv sein wird jene Transition auf Auslösung, mit der Funktion \texttt{isTriggerd}, durch die FSM Instanz nach der Ausführung des States überprüft.
+
+Für unsere Implementierung haben wir folge Transitionen abgeleitet:
+
+\begin{itemize}
+	\item Always
+	\item ArucoGateFound
+	\item Distance
+	\item Finished
+	\item SensorLevel
+\end{itemize}
+
+\subsubsection{Interfaces}
+
+Um die Übergabe von Informationen zwischen zum Beispiel einem State und einer Transtion zu gewährleisten haben wir zwei Interfaces für States verwendet. 
+States die das Interface \texttt{IFinishable} einbinden können entscheiden wenn diese Abgeschlossen sind. Zum Beispiel implementiert der State \texttt{ApproachPoint} diese Interface und signalisiert die Ankunft an dem definierten Punkt.
+
+Ebenso können States die das Interface \texttt{ApproachPoint} implementieren ein Zielpunkt gesetzt bekommen. Diese Interface wird auch zum Beispiel vom State \texttt{ApproachPoint} implementiert und erlaubt so ein verlegen des definierten Punktes bei der Ausführung.
+
+Soll muss zum Beispiel der \textit{owner} State der \texttt{Finished} Transition das dazugehörige Interface implementieren, sollte dies nicht der Fall sein kommt es zu einem Laufzeitfehler.
 
 \subsection{Deserialisieren}
+\label{fsm-Deserialisieren}
