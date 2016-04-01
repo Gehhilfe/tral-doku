@@ -54,9 +54,51 @@ OpenCV erkennt nun die ArUco-Marker und kann deren Position errechnen. Die Daten
 \subsection{Durchfahren von Toren}
 Nachdem nun dargestellt wurde, wie ArUco-Marker erkannt werden, bedarf es nur noch eines weiteren Schrittes, um das erkannt ArUco-Tor zu durchfahren. Man muss anhand der erhaltenen Koordinaten den weiteren Streckenverlauf so umplanen, dass das Tor durchfahren wird. 
 \newline
-Dazu gibt es verschiedene mögliche Ansätze. Zuerst war geplant, eine S-Kurve zu berechnen, deren Startpunkt die aktuelle Position und deren Endpunkt ein Punkt unmittelbar vor dem ArUco-Tor ist. Der Vorteil dieser Implementierung ist, dass das Auto vor dem Tor schon senkrecht zur Verbindungsstrecke der beiden Markermittelpunkte ausgerichtet ist, sodass es nur noch geradeaus fahren muss. Dazu war es nötig, sowohl Kenntnis über die Strecke, welche durch eine Hallsensoreinheit beschrieben wird, sowie über die Lenkwinkel passend zu den eingestellten Lenkeinschlägen zu erhalten. Dazu haben wir mehrere Messstrecken durchgeführt. Leider lieferte der Hall Sensor sehr unzuverlässige Werte. Für die Lenkwinkel haben wir eine ganze Messreihe aufgenommen und die Lenkwinkel bestimmt. Daraus konnten nun zwei Viertelkreisbögen errechnet werden, die umgekehrt zusammengesetzt eine S-Kurve ergeben. Dabei wurde festgestellt, dass das Auto bei Lenkeinschlag 0 nicht exakt geradeaus fährt, weshalb ein Offset abgezogen werden musste. Zudem kamen nicht reproduzierbare Ergebnisse heraus. Manchmal fuhr das Auto perfekt durch das erkannte Tor, manchmal lag es weit daneben. Dieser Umstand ist nach unseren Auswertungen dem schlechten Gewicht-Leistungsverhältnis geschuldet. Die Servomotoren schaffen es nicht, gerade aus dem Stand, in den gewünschten Lenkeinschlag zu lenken. Dies führt dazu, dass das Ergebnis von einer Eingangsgröße, dem aktuellen Lenkeinschlag und der Geschwindigkeit abhängt, sodass es uns nicht möglich war diesen Ansatz weiter zu verfolgen. 
+Dazu gibt es verschiedene mögliche Ansätze. Zuerst war geplant, eine S-Kurve zu berechnen, deren Startpunkt die aktuelle Position und deren Endpunkt ein Punkt unmittelbar vor dem ArUco-Tor ist. Der Vorteil dieser Implementierung ist, dass das Auto vor dem Tor schon senkrecht zur Verbindungsstrecke der beiden Markermittelpunkte ausgerichtet ist, sodass es nur noch geradeaus fahren muss. Dazu war es nötig, sowohl Kenntnis über die Strecke, welche durch eine Hallsensoreinheit beschrieben wird, sowie über die Lenkwinkel passend zu den eingestellten Lenkeinschlägen zu erhalten. Dazu haben wir mehrere Messstrecken durchgeführt. Leider lieferte der Hall Sensor sehr unzuverlässige Werte. Für die Bestimmung der Lenkwinkel haben wir eine ganze Messreihe aufgenommen. Daraus konnten nun zwei Viertelkreisbögen errechnet werden, die umgekehrt zusammengesetzt eine S-Kurve ergeben. Dabei wurde festgestellt, dass das Auto bei Lenkeinschlag 0 nicht exakt geradeaus fährt, weshalb ein Offset abgezogen werden musste. Zudem erzielten wir nicht reproduzierbare Ergebnisse. Manchmal fuhr das Auto perfekt durch das erkannte Tor, manchmal lag es weit daneben. Dieser Umstand ist nach unseren Auswertungen dem schlechten Gewichts-Leistungsverhältnis geschuldet. Die Servomotoren schaffen es nicht, gerade aus dem Stand, in den gewünschten Lenkeinschlag zu lenken. Dies führt dazu, dass das Ergebnis von zwei Eingangsgrößen, dem aktuellen Lenkeinschlag und der Geschwindigkeit, abhängt, sodass es uns nicht möglich war diesen Ansatz weiter zu verfolgen. 
 \newline
 \newline
-Daher haben wir uns entschlossen, wie oben bereits erwähnt, eine lineare Regelung zu implementieren. Dies bedingt jedoch (im Gegenteil zur Lösung mittels S-Kurve) eine Wand auf einer Seite des Fahrzeuges, zur der es sich relativ bewegen kann. 
+Daher haben wir uns entschlossen, wie oben bereits erwähnt, eine lineare Regelung zu implementieren. Dies bedingt jedoch (im Gegenteil zur Lösung mittels S-Kurve) eine Wand auf einer Seite des Fahrzeuges, zu der es sich relativ bewegen kann. 
 \newline
-Der Regler um eine lineare Funktion erhält als Eingangsgrößen den Startabstand, den Endabstand, sowie die Strecke in Hallsensoreinheiten.  
+\newline
+Der Regler um eine lineare Funktion erhält als Eingangsgrößen den Startabstand, den Endabstand, sowie die Strecke in Hallsensoreinheiten. Anhand dieser Werte wird, wie auch im normalen BasicFollowWall State eine Regelung durchgeführt. Unterschied ist diesmal jedoch, dass sich der Abstand zur Wand, der sonst ja konstant ist, linear ändert. Das heißt, dass die Regelung mit zunehmender zurückgelegter Strecke, was durch den Hallsensor ermittelt wird, um einen weiter von der Wand entfernten Abstand regelt. 
+\newline
+\newline
+Diese Funktion wurde im FollowWallRamp State implementiert. In dem State gibt es eine Funktion, setTarget, die den Zielpunkt der Regelung festlegt. Dazu wird, je nach Wandseite, die x-Koordinate den übergebenen Werten angepasst. Dabei wird die x-Koordinate des Ziels um den aktuellen Wandabstand erhöht bzw. erniedrigt, sodass sie den wirklichen Wandabstand enthält. Des Weiteren wird der y-Abstand des Zielpunktes für die messbaren Halldistanzwerte normalisiert.
+\newpage
+\begin{lstlisting}
+void FollowWallRamp::setTarget(Vec3f target)
+{
+_finished = false;
+if(_wallSide == WallSide::Right)
+_targetClearance = -(target[0])+_startClearance;
+else
+_targetClearance = target[0]+_startClearance;
+_distance = 1500/1.60f*target[2];
+}
+\end{lstlisting}
+
+In der tick()-Methode sind nur folgende fünf Befehle relevant:
+
+\begin{lstlisting}
+unsigned int curDistance = mstate.getHallDistance()-_startDistance;
+
+if(curDistance >= _distance)
+_finished = true;
+
+double m = (_targetClearance-_startClearance)/(_distance);
+_clearance = m*curDistance + _startClearance;
+...
+BasicFollowWall::tick();
+\end{lstlisting}
+
+Hier wird die aktuell zurückgelegte Distanz aktualisiert und mit der Zieldistanz verglichen. Sollte diese erreicht sein, wird die nächste Transition gefeuert indem der Wert \_finished, der wegen der Implementierung des IFinishable-Interfaces vorhanden sein muss, gesetzt wird. Ansonsten wird die aktuelle Steigung berechnet, sowie mit ihr der aktuelle Wandabstand \_clearance. Mit diesem wird am Ende der tick()-Methode des FollowWallRamp-Zustands die tick()-Methode des BasicFollowWall-Zustands aufgerufen. Dies sorgt wie im Standardfall auch für eine Regelung um den festgelegten Wandabstand. 
+\newline
+Wie man sehen kann, ist für die Regelung nach einer linearen Funktion nur eine geringe Änderung des vorhandenen Codes nötig gewesen. 
+\newline
+\newline
+Diese neue Funktion des Autos wurde nun von uns verwendet, um ein durch die Kamera erkanntes ArUco-Tor, dessen Koordinaten im Raum übergeben wurden, auf einen Punkt einen Meter vor dem Tor anzusteuern.
+Weiter oben wurde bereits der Umstand erwähnt, dass es mit einer S-Kurve möglich ist, eine gerade Ausrichtung des Autos zu erreichen. Dies ist mit der Rampenfunktion nicht möglich. Vielmehr ist die Ausrichtung fast nie gleich, da durch die Regelung unterschiedliche Lenkwinkel angenommen werden. In der Regel ist das Auto jedoch in Fahrtrichtung um einen geringen Winkel zwischen $0^\circ$ und $45^\circ$ zur Parallelen zur Wand durch den Tormittelpunkt versetzt. Daher muss die gefeuerte Transition nun noch in zwei weitere Zustände, einen zum Ausrichten des Autos (ArucoGateCenter) und einen zum geradeaus fahren (Motor), überführen. Ersterer macht nichts anderes, als zu prüfen, ob der Tormittelpunkt auf der linken oder rechten Seite des Autos ist und den Lenkeinschlank in entsprechender Richtung auf 1.0 zu setzen und das Auto so weit zu bewegen, bis es ausgerichtet ist. Der Motor-State liest aus seiner JSON-Konfiguration den übergebenen Lenkeinschlag und die Geschwindigkeit und fährt mit dieser Konfiguration so lange, bis die folgende Transition feuert. 
+\newline
+\newline
+Wie man sehen kann, benötigen wir lediglich drei Zustände, um die Tordurchfahrt zu realisieren. Dank unserer FSM-Struktur ist es uns so einfach möglich, z.B. indem das Erkennen und Durchfahren eines ArUco-Tores parallel zu einem anderen Pfad geschaltet wird, flexibel auf auftauchende Tore zu reagieren und diese zu durchfahren. 
+  
