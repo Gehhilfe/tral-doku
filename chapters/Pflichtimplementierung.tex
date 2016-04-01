@@ -1,16 +1,52 @@
 \section{L\"osung Pflichtimplementierung}
 \label{sec:lsgpflicht}
 
-Hallo?
+Wie bereits im Abschnitt "`Aufgabenstellung"' beschrieben, war es Gegenstand der Pflichtimplementierung, dass das Auto autonom mittels Sensorik fahren kann, die Kamera ArUco-Marker erkennt, sowie das Auto durch ein Tor aus solchen hindurchfahren kann. Bereits in obigem Abschnitt wurden die Rahmenbedingungen, welche wir für unsere Lösung angenommen haben definiert. Im Folgenden wird nun erläutert, wie wir, auf Grundlage des Zustandsautomaten, dessen genaue Implementierung erst später erläutert wird, die drei Hauptaufgaben realisiert haben.
 
 %%%%%%
-\subsection{Noch grundlegender}
-Text
+\subsection{Autonomes Fahren}
+Unser Konzept zum autonomen Fahren beruht sehr stark auf den Möglichkeiten, die uns die FSM (Finite State Machine/Zustandsautomat) bietet. 
+Das Konzept beruht grundlegen darauf, dass das Auto eine FSM lädt, die entweder per JSON-File (genaueres zu JSON, s. Abschnitt 8) oder per graphischer Oberfläche (genaueres zur graphischen Programmierung, s. Abschnitt 9) konfiguriert wird. Die FSM ist ein Graph aus verschiedenen Zuständen, die jeweils eine Funktion des Autos, wie z.B. geradeaus an einer Wand entlang fahren, repräsentieren. Diese verschiedenen Funktionen oder Zustände des Autos sind über Transitionen verbunden, d.h. Ergeignisse, die zu einem Zustandswechsel führen. Das kann z.B. eine abrupte Abstandsänderung der führenden Wand sein. 
+Mittels der Kombination aus Zuständen in denen sich das Auto befinden kann und Ereignissen, die zu einem Zustandswechsel führen, kann ein autonomen Verhalten je nach Umgebung des Autos realisiert werden. Alternativ kann ein Weg in einem Bekannten Umfeld einprogrammiert werden, indem eine Folge von Zuständen konkateniert wird. 
+Der Basiszustand für das autonome Fahren ist ein einfacher Wandfolger-Zustand, der das geregelte Geradeausfahren entlang einer Wand realisiert. 
+
+Ein Regelkreis sorgt dafür, dass ein System in einen stabilen Zustand überführt wird. Dazu wird eine Eingangsgröße, in diesem Fall der Abstand zur Wand in einen Regelkreis geführt. Ausgangsgröße ist dann der Lenkeinschlag, welcher den Abstand des Autos zur Wand beeinflusst. Um nun den Wandabstand stabil zu halten, wird die Differenz zwischen der Regelgröße (Lenkeinschlag) und Führungsgröße (Wandabstand) bestimmt (Regelabweichung). Da die einzelnen Regelkreisglieder ein Zeitverhalten haben, muss der Regler den Wert der Abweichung verstärken, sowie das Zeitverhalten unterdrücken. 
+Anfangs haben wir versucht, das Regelverhalten durch einen PID-Regler abzubilden, jedoch führten Test und Hinweise einer Gruppe des vergangenen Semesters zu einer Vernachlässigung des I-Anteils. Generell sorgt der P Anteil für eine proportionale Verstärkung der Regelabweichung. Der D Anteil sorgt für einen differenzierendes Verhalten, ist also abhängig von der Änderungsgeschwindigkeit der Regelabweichung.
+Der vernachlässigte I Anteil sorgt für eine zeitliche Integration der Regelabweichung. Dies führt bei dem Auto zu einer sich mit höherem I Anteil einstellenden Trägheit, die das Auto unflexibler macht.
+
+Der Basiscode, mit dem der Regler implementiert wird ist in der Klasse \textit{BasicFollowWall} zu sehen:
+\begin{lstlisting}
+double y = _p * e + _esum * _i * PID_S + _d * (e - _eold)*PID_INVS;
+\end{lstlisting}
+Hierbei stellen \textit{PID_S} und \textit{PID_INVS} Konstanten dar (0.0125 und 80). P ist der Proportionalanteil, i der Integralanteil und d der Differentialanteil. E ist die Eingangsgröße, _esum die aufaddierten Wandabstände der vergangenen durchläufe und _eold der Wert des letzten Durchlaufes. Y ist der daraus berechnete Lenkeinschlag.
+
+Mittels des oben vorgestellten PD-Reglers wird im Zustand \textit{BasicFollowWall} das Geradeausfahren implementiert. Erste Tests haben gezeigt, das entgegen der Erwartungen auch Kurven mit dem gleichen Zustand umfahren werden konnten. Daraus ergab sich dann die Einsicht, dass kein neuer Kurvenzustand eingeführt werden musste. Es lassen sich also alle grundlegenden Bewegungen durch eine Konkatenation verschieden parametrisierter Wall-Follow Zustände erreichen. Durch verschiedene Tests hat sich herausgestellt, dass Kurven umso besser funktionieren, wenn unmittelbar vorher die Geschwindigkeit gedrosselt wird und im Anschluss ein größerer Wandabstand gewählt wird, da sonst die Gefahr besteht, dass die Ultraschallsensoren einen zu steilen Winkel zur Wand haben. 
+Nun ist es also möglich mit einem einzigen Zustand (BasicFollowWall) die grundlegenden Bewegungen (geradeaus fahren, Kurven fahren) abzudecken. Als Transitionen zwischen den Zuständen haben wir vier Optionen implementiert: \textit{Always, Distance, Finished, SensorLevel}. 
+\begin{itemize}
+	\item \textbf{Always}: Diese Transition feuert immer sofort.
+	\item \textbf{Distance}: Diese Transition feuert immer nach der übergebenen Distanz. Die aktuelle Distanz wird immer über die Hall-Sensoren aus dem aktuellen Maschinen-Zustand (Machine State) ausgelesen. 
+	\item \textbf{Finished}: Um zu feuern, muss die Methode isFinished() des vorangegangenen Zustands true zurückgeben. Diese Transition ist also nur möglich, wenn der vorige Zustand das Interface IFinishable implementiert. 
+	\item \textbf{SensorLevel}:	SensorLevel ist die meistgenutzte Transition. Sie feuert immer dann, wenn ein vorgegebener Sensorwert über oder unterschritten wurde. Diese Transition kann Werte aller drei Ultraschallsensoren als Referenz nehmen und sowohl bei Über- oder Unterschreiten eines Grenzwertes aktiv werden. 
+\end{itemize}
+Neben dem BasicFollowWall-State sind noch einige weitere States implementiert, die jeweils spezielle Aufgaben erfüllen und im Folgenden knapp vorgestellt werden:
+\begin{itemize}
+	\item \textbf{ApproachPoint}: Es kann ein Punkt übergeben werden, der dann geregelt angefahren wird. Dieser Zustand wurde von uns dafür erstellt, einen Punkt einen Meter vor einem ArUco-Tor anzufahren.
+	\item \textbf{ArucoGateCenter}: Dieser Zustand richtet das Auto aus, wenn es vor einem ArUco-Tor steht, um das Tor anschließend gerade zu durchfahren. Dies ist nötig, da das Auto nach Transition aus dem ApproachPoint-Zustand nicht rechtwinklig zur Verbindungsgeraden der beiden Marker-Mittelpunkte ausgerichtet ist.
+	\item \textbf{FollowWall}: FollowWall ist eine Modifikation des BasicFollowWall-Zustandes. Ziel war, dass die Regelung Türrahmen ignoriert, sodass sich das Auto anschließend nicht stark aufschaukelt. Dies wurden erreicht, indem Abweichungen der Ultraschallsensorwerte, die größer als 2cm sind, ignoriert werden. Dies bringt den Vorteil mit sich, dass das Auto sehr stabil gerade aus fährt. Nachteilig ist jedoch, dass es nicht mehr oder nur noch sehr schwach auf größere Änderungen der Umgebung reagiert. Zur Erkennung von Kurven ist dies jedoch kein Problem, da diese ja in der folgenden Transition getriggert werden.
+	\item \textbf{FollowWallRamp}: Dieser Zustand ermöglicht eine Abstandsregelung zu einer das Auto umgebenden Wand nach einer linearen Funktion. Er ermöglicht somit z.B. einen Spurwechsel oder das Umfahren von Hindernissen.
+	\item \textbf{FSMState}: Dieser Zustand ermöglicht das Einbinden von Zustandsautomaten als eigenen Zustand in einer FSM. Dies schafft eine sehr starke Abstraktion, sodass eine Zustandsfolge zur Kurvenfahrt abstrakt eingebunden werden kann und die Größe des Gesamtautomaten überschaubar bleibt.
+	\item \textbf{Idle}: Dieser Zustand macht nichts. 
+	\item \textbf{Motor}: Hier fährt das Auto einfach mit festgelegter Geschwindigkeit eine festgelegte Distanz geradeaus.
+	\item \textbf{Stop}: Dieser Zustand stoppt das Auto.
+\end{itemize}
+Mittels der vorgestellten Konstrukte kann nun eine beliebige Abfolge von Aktivitäten des Autos abgebildet werden. Es ist möglich eine Strecke oder alternativ ein Verhalten des Autos einzuprogammieren. Ein autonomes Verhalten wird z.B. über mehrere parallele Zweige im Automaten realisiert. Als Beispiel fährt das Auto geradeaus und falls ein Hindernis auftritt feuert eine Transition, die mehrere Zustände zu dessen Umfahren triggert. Werden Marker erkannt, könnte eine andere Transition feuern und je nach ID ein Verhalten des Autos auslösen.
+
+Durch die vorgestellte Modularität ist das autonome Verhalten des Autos um (fast) beliebig Szenarien erweiterbar (Fliegen lernen wird es leider ohne Hardwareanpassungen nie können).
+%%%%%%
+\subsection{Erkennung ArUco-Marker}
+Die Erkennung der ArUco-Marker ist durch einen ROS-Node implementiert. Dort haben wir zur Kamerakalibrierung eine Kombination der ROS-internen Kalibrierung und der Kalibrierung der OpenCV Open Source Software Bibliothek verwendet. Zur Kalibrierung wird ein Schachbrettmuster verwendet. Dabei übergibt man der OpenCV-Routine die Anzahl der Kästchen und deren Größe. Nachdem die Eckpunkte erkannt sind, werden verschiedene Orientierungen im Raum dargestellt, um eine robuste Kalibrierung zu erreichen. Anhand der Zuordnungen von Raum zu Bildkoordinaten kann nun die Kalibrierungsmatrix berechnet werden. 
+OpenCV erkennt nun die ArUco-Marker und kann deren Position errechnen. Die Daten dazu werden anschließend in einer ROS-Topic gepublisht. Unserer Anwendungssoftware stehen so die genauen Bildkoordinaten der Marker und ihre Ausrichtung im Raum zur Verfügung.  
 
 %%%%%%
-\subsubsection{Grundlage?}
-Test
-
-%%%%%%
-\subsubsection{GRUNDLAGE!}
-Text
+\subsection{Durchfahren von Toren}
+blablabla

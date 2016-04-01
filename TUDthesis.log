@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.16)  20 MAR 2016 12:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.16)  1 APR 2016 15:25
 entering extended mode
 **./TUDthesis.tex
 (TUDthesis.tex
@@ -939,6 +939,15 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
+(A:\Latex\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(A:\Latex\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(A:\Latex\tex\latex\listings\lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+)
 (A:\Latex\tex\latex\chngcntr\chngcntr.sty
 Package: chngcntr 2009/09/02 v1.0a change counter resetting
 )
@@ -949,39 +958,39 @@ LaTeX Warning: Unused global option(s):
 (TUDthesis.aux)
 \openout1 = `TUDthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 50.
-LaTeX Font Info:    Try loading font information for MDA+cmr on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 56.
+LaTeX Font Info:    Try loading font information for MDA+cmr on input line 56.
  (A:\Latex\tex\latex\mathdesign\mdacmr.fd
 File: mdacmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 50.
-LaTeX Font Info:    Try loading font information for MDB+cmr on input line 50.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 56.
+LaTeX Font Info:    Try loading font information for MDB+cmr on input line 56.
 
 (A:\Latex\tex\latex\mathdesign\mdbcmr.fd
 File: mdbcmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Try loading font information for T1+5ch on input line 50.
-LaTeX Font Info:    No file T15ch.fd. on input line 50.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Try loading font information for T1+5ch on input line 56.
+LaTeX Font Info:    No file T15ch.fd. on input line 56.
 
 
 LaTeX Font Warning: Font shape `T1/5ch/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 50.
+(Font)              using `T1/cmr/m/n' instead on input line 56.
 
 (A:\Latex\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1036,7 +1045,7 @@ LaTeX Font Warning: Font shape `T1/5ch/m/n' undefined
 \c@lstlisting=\count114
 
 Package  Warning: Command `\dateofsubmit ' ignored!
-()                See documentation for details. on input line 68.
+()                See documentation for details. on input line 74.
 
 \@TUD@tmp@baselineskip=\skip102
 \TUD@titleboxheight=\skip103
@@ -1062,160 +1071,160 @@ Package  Warning: Command `\dateofsubmit ' ignored!
 \TUD@refereebox=\box40
 \TUD@tmp@height=\skip118
 \TUD@tmp@depth=\skip119
-LaTeX Font Info:    Try loading font information for T1+5fp on input line 69.
-LaTeX Font Info:    No file T15fp.fd. on input line 69.
+LaTeX Font Info:    Try loading font information for T1+5fp on input line 75.
+LaTeX Font Info:    No file T15fp.fd. on input line 75.
 
 LaTeX Font Warning: Font shape `T1/5fp/mb/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 69.
+(Font)              using `T1/cmr/m/n' instead on input line 75.
 
-LaTeX Font Info:    Try loading font information for OT1+mdbch on input line 69
+LaTeX Font Info:    Try loading font information for OT1+mdbch on input line 75
 .
 (A:\Latex\tex\latex\mathdesign\mdbch\ot1mdbch.fd
 File: ot1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OT1/mdbch.
 )
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 12.00008pt on input line 69.
+(Font)              scaled to size 12.00008pt on input line 75.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 8.44806pt on input line 69.
+(Font)              scaled to size 8.44806pt on input line 75.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 7.20004pt on input line 69.
-LaTeX Font Info:    Try loading font information for OML+mdbch on input line 69
+(Font)              scaled to size 7.20004pt on input line 75.
+LaTeX Font Info:    Try loading font information for OML+mdbch on input line 75
 .
 
 (A:\Latex\tex\latex\mathdesign\mdbch\omlmdbch.fd
 File: omlmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdbch.
 )
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 12.00008pt on input line 69.
+(Font)              scaled to size 12.00008pt on input line 75.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 8.44806pt on input line 69.
+(Font)              scaled to size 8.44806pt on input line 75.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 7.20004pt on input line 69.
-LaTeX Font Info:    Try loading font information for OMS+mdbch on input line 69
+(Font)              scaled to size 7.20004pt on input line 75.
+LaTeX Font Info:    Try loading font information for OMS+mdbch on input line 75
 .
 
 (A:\Latex\tex\latex\mathdesign\mdbch\omsmdbch.fd
 File: omsmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMS/mdbch.
 )
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 12.00008pt on input line 69.
+(Font)              scaled to size 12.00008pt on input line 75.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 8.44806pt on input line 69.
+(Font)              scaled to size 8.44806pt on input line 75.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 7.20004pt on input line 69.
-LaTeX Font Info:    Try loading font information for OMX+mdbch on input line 69
+(Font)              scaled to size 7.20004pt on input line 75.
+LaTeX Font Info:    Try loading font information for OMX+mdbch on input line 75
 .
 
 (A:\Latex\tex\latex\mathdesign\mdbch\omxmdbch.fd
 File: omxmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdbch.
 )
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 12.00008pt on input line 69.
+(Font)              scaled to size 12.00008pt on input line 75.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 8.44806pt on input line 69.
+(Font)              scaled to size 8.44806pt on input line 75.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 7.20004pt on input line 69.
+(Font)              scaled to size 7.20004pt on input line 75.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 12.00008pt on input line 69.
+(Font)              scaled to size 12.00008pt on input line 75.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 8.44806pt on input line 69.
+(Font)              scaled to size 8.44806pt on input line 75.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 7.20004pt on input line 69.
-LaTeX Font Info:    Try loading font information for MDA+mdbch on input line 69
+(Font)              scaled to size 7.20004pt on input line 75.
+LaTeX Font Info:    Try loading font information for MDA+mdbch on input line 75
 .
 
 (A:\Latex\tex\latex\mathdesign\mdbch\mdamdbch.fd
 File: mdamdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdbch.
 )
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 12.00008pt on input line 69.
+(Font)              scaled to size 12.00008pt on input line 75.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 8.44806pt on input line 69.
+(Font)              scaled to size 8.44806pt on input line 75.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 7.20004pt on input line 69.
-LaTeX Font Info:    Try loading font information for MDB+mdbch on input line 69
+(Font)              scaled to size 7.20004pt on input line 75.
+LaTeX Font Info:    Try loading font information for MDB+mdbch on input line 75
 .
 
 (A:\Latex\tex\latex\mathdesign\mdbch\mdbmdbch.fd
 File: mdbmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDB/mdbch.
 )
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 12.00008pt on input line 69.
+(Font)              scaled to size 12.00008pt on input line 75.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 8.44806pt on input line 69.
+(Font)              scaled to size 8.44806pt on input line 75.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 7.20004pt on input line 69.
-LaTeX Font Info:    Try loading font information for OML+mdput on input line 69
+(Font)              scaled to size 7.20004pt on input line 75.
+LaTeX Font Info:    Try loading font information for OML+mdput on input line 75
 .
 
 (A:\Latex\tex\latex\mathdesign\mdput\omlmdput.fd
 File: omlmdput.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdput.
 )
 LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 11.75003pt on input line 69.
+(Font)              scaled to size 11.75003pt on input line 75.
 LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 8.27202pt on input line 69.
+(Font)              scaled to size 8.27202pt on input line 75.
 LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 7.05002pt on input line 69.
+(Font)              scaled to size 7.05002pt on input line 75.
 \@TUD@titlelines=\count115
 
 
 LaTeX Font Warning: Font shape `T1/5fp/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 69.
+(Font)              using `T1/cmr/m/n' instead on input line 75.
 
 <logo/tud_logo.pdf, id=1, 157.58875pt x 63.23625pt>
 File: logo/tud_logo.pdf Graphic file (type pdf)
  <use logo/tud_logo.pdf>
-Package pdftex.def Info: logo/tud_logo.pdf used on input line 69.
+Package pdftex.def Info: logo/tud_logo.pdf used on input line 75.
 (pdftex.def)             Requested size: 134.92238pt x 62.59605pt.
 File: logo/tud_logo.pdf Graphic file (type pdf)
 
 <use logo/tud_logo.pdf>
-Package pdftex.def Info: logo/tud_logo.pdf used on input line 69.
+Package pdftex.def Info: logo/tud_logo.pdf used on input line 75.
 (pdftex.def)             Requested size: 134.92238pt x 62.59605pt.
  <logo/ESlogo.png, id=4, 88.33pt x 81.30376pt>
 File: logo/ESlogo.png Graphic file (type png)
 
 <use logo/ESlogo.png>
-Package pdftex.def Info: logo/ESlogo.png used on input line 69.
+Package pdftex.def Info: logo/ESlogo.png used on input line 75.
 (pdftex.def)             Requested size: 44.88461pt x 41.31361pt.
 \temp@logoboxwidth=\skip120
 File: logo/ESlogo.png Graphic file (type png)
  <use logo/ESlogo.png>
-Package pdftex.def Info: logo/ESlogo.png used on input line 69.
+Package pdftex.def Info: logo/ESlogo.png used on input line 75.
 (pdftex.def)             Requested size: 44.88461pt x 41.31361pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 []| []
  []
 
 
-Overfull \hbox (14.2pt too wide) in paragraph at lines 69--69
+Overfull \hbox (14.2pt too wide) in paragraph at lines 75--75
 | $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
  []
 
@@ -1226,15 +1235,15 @@ Non-PDF special ignored!
 Non-PDF special ignored! <./logo/tud_logo.pdf> <./logo/ESlogo.png>] [0
 
 ]
-LaTeX Font Info:    Try loading font information for T1+5sf on input line 70.
-LaTeX Font Info:    No file T15sf.fd. on input line 70.
+LaTeX Font Info:    Try loading font information for T1+5sf on input line 76.
+LaTeX Font Info:    No file T15sf.fd. on input line 76.
 
 
 LaTeX Font Warning: Font shape `T1/5sf/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 70.
+(Font)              using `T1/cmr/m/n' instead on input line 76.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--70
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 
  []
 
@@ -1307,68 +1316,828 @@ LaTeX Font Warning: Font shape `TS1/5ch/m/n' undefined
 ) [7
 
 
-] [8] (chapters/Pflichtimplementierung.tex) [9
+] [8] (chapters/Pflichtimplementierung.tex
+
+LaTeX Font Warning: Font shape `T1/5ch/b/n' undefined
+(Font)              using `T1/5ch/m/n' instead on input line 19.
+
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 19.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 19.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 9.98405pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 7.00804pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 6.04803pt on input line 19.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 19.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 19.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 19.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 19.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 19.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 19.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 19.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 19.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 19.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 9.98405pt on input line 19.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 19.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 6.04803pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 9.77602pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 6.86201pt on input line 19.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 5.92201pt on input line 19.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.21 Hierbei stellen \textit{PID_S}
+                                    und \textit{PID_INVS} Konstanten dar (0....
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.21 Hierbei stellen \textit{PID_S}
+                                    und \textit{PID_INVS} Konstanten dar (0....
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.21 ...ellen \textit{PID_S} und \textit{PID_INVS}
+                                                   Konstanten dar (0.0125 un...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mbox #1->\leavevmode \hbox {#1}
+                                
+l.21 ...ellen \textit{PID_S} und \textit{PID_INVS}
+                                                   Konstanten dar (0.0125 un...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\nfss@text #1->{\mbox {#1}}
+                           
+l.21 ...ellen \textit{PID_S} und \textit{PID_INVS}
+                                                   Konstanten dar (0.0125 un...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
 
-] (chapters/Fsm.tex
+LaTeX Warning: Command \" invalid in math mode on input line 21.
+
+
+LaTeX Warning: Command \ss invalid in math mode on input line 21.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 21.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 21.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.22 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no � in font mdbchr7t!
+Missing character: There is no � in font mdbchr7t!
+Missing character: There is no � in font mdbchr7t!
+Missing character: There is no � in font mdbchr7t!
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 	\item \textbf
+                   {Always}: Diese Transition feuert immer sofort.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 	\item \textbf
+                   {Always}: Diese Transition feuert immer sofort.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 	\item \textbf
+                   {Always}: Diese Transition feuert immer sofort.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Font Warning: Font shape `TS1/5ch/m/it' undefined
+(Font)              using `TS1/5ch/m/n' instead
+(Font)              for symbol `textbullet' on input line 26.
+
+
+LaTeX Font Warning: Font shape `T1/5ch/b/it' undefined
+(Font)              using `T1/5ch/b/n' instead on input line 26.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 	\item \textbf
+                   {Distance}: Diese Transition feuert immer nach der überg...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 	\item \textbf
+                   {Distance}: Diese Transition feuert immer nach der überg...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 	\item \textbf
+                   {Distance}: Diese Transition feuert immer nach der überg...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 	\item \textbf
+                   {Finished}: Um zu feuern, muss die Methode isFinished() d...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 	\item \textbf
+                   {Finished}: Um zu feuern, muss die Methode isFinished() d...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 	\item \textbf
+                   {Finished}: Um zu feuern, muss die Methode isFinished() d...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 	\item \textbf
+                   {SensorLevel}:	SensorLevel ist die meistgenutzte Transiti...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 	\item \textbf
+                   {SensorLevel}:	SensorLevel ist die meistgenutzte Transiti...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 	\item \textbf
+                   {SensorLevel}:	SensorLevel ist die meistgenutzte Transiti...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 \end{itemize}
+                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 \end{itemize}
+                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 \end{itemize}
+                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 	\item \textbf
+                   {ApproachPoint}: Es kann ein Punkt übergeben werden, der...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 	\item \textbf
+                   {ApproachPoint}: Es kann ein Punkt übergeben werden, der...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 	\item \textbf
+                   {ApproachPoint}: Es kann ein Punkt übergeben werden, der...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 	\item \textbf
+                   {ArucoGateCenter}: Dieser Zustand richtet das Auto aus, w...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 	\item \textbf
+                   {ArucoGateCenter}: Dieser Zustand richtet das Auto aus, w...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 	\item \textbf
+                   {ArucoGateCenter}: Dieser Zustand richtet das Auto aus, w...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35 	\item \textbf
+                   {FollowWall}: FollowWall ist eine Modifikation des BasicF...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35 	\item \textbf
+                   {FollowWall}: FollowWall ist eine Modifikation des BasicF...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35 	\item \textbf
+                   {FollowWall}: FollowWall ist eine Modifikation des BasicF...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 	\item \textbf
+                   {FollowWallRamp}: Dieser Zustand ermöglicht eine Abstand...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 	\item \textbf
+                   {FollowWallRamp}: Dieser Zustand ermöglicht eine Abstand...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 	\item \textbf
+                   {FollowWallRamp}: Dieser Zustand ermöglicht eine Abstand...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 	\item \textbf
+                   {FSMState}: Dieser Zustand ermöglicht das Einbinden von ...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 	\item \textbf
+                   {FSMState}: Dieser Zustand ermöglicht das Einbinden von ...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 	\item \textbf
+                   {FSMState}: Dieser Zustand ermöglicht das Einbinden von ...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38 	\item \textbf
+                   {Idle}: Dieser Zustand macht nichts.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38 	\item \textbf
+                   {Idle}: Dieser Zustand macht nichts.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38 	\item \textbf
+                   {Idle}: Dieser Zustand macht nichts.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 	\item \textbf
+                   {Motor}: Hier fährt das Auto einfach mit festgelegter Ge...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 	\item \textbf
+                   {Motor}: Hier fährt das Auto einfach mit festgelegter Ge...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 	\item \textbf
+                   {Motor}: Hier fährt das Auto einfach mit festgelegter Ge...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 	\item \textbf
+                   {Stop}: Dieser Zustand stoppt das Auto.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 	\item \textbf
+                   {Stop}: Dieser Zustand stoppt das Auto.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 	\item \textbf
+                   {Stop}: Dieser Zustand stoppt das Auto.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 \end{itemize}
+                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 \end{itemize}
+                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 \end{itemize}
+                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 \subsection{Erkennung ArUco-Marker}
+                                        
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 \subsection{Erkennung ArUco-Marker}
+                                        
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.46 \subsection{Erkennung ArUco-Marker}
+                                        
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.46 \subsection{Erkennung ArUco-Marker}
+                                        
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.46 \subsection{Erkennung ArUco-Marker}
+                                        
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.46 \subsection{Erkennung ArUco-Marker}
+                                        
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (24575.20818pt too wide) in paragraph at lines 21--46
+\T1/5ch/b/it/12 Hierbei stel-len PID$[]\OML/mdbch/m/it/12.5 und[]$ 
+ []
+
+[9
+
+
+]
+! Missing } inserted.
+<inserted text> 
+                }
+l.46 \subsection{Erkennung ArUco-Marker}
+                                        
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.46 \subsection{Erkennung ArUco-Marker}
+                                        
+Things are pretty mixed up, but I think the worst is over.
+
+) [10] (chapters/Fsm.tex
 LaTeX Font Info:    Try loading font information for T1+txtt on input line 12.
-
-(A:\Latex\tex\latex\txfonts\t1txtt.fd
+ (A:\Latex\tex\latex\txfonts\t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
 
 LaTeX Font Warning: Font shape `T1/txtt/mb/n' undefined
 (Font)              using `T1/txtt/m/n' instead on input line 22.
 
-) [10
+) [11
 
 
-] (chapters/Json.tex) [11
+] (chapters/Json.tex) [12
 
 
 ] (chapters/GraphischeProgrammierung.tex)
-[12
+[13
 
 
-] (chapters/Doku.tex) [13
+] (chapters/Doku.tex) [14
 
 
-] (chapters/Fazit.tex) [14
+] (chapters/Fazit.tex) [15
 
 
-] [15
+] [16
 
 
 ] (TUDthesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 9707 strings out of 493634
- 143453 string characters out of 3151453
- 276906 words of memory out of 3000000
- 12812 multiletter control sequences out of 15000+200000
- 31697 words of font info for 58 fonts, out of 3000000 for 9000
+ 10208 strings out of 493634
+ 148595 string characters out of 3151453
+ 306804 words of memory out of 3000000
+ 13295 multiletter control sequences out of 15000+200000
+ 47229 words of font info for 92 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 65i,12n,77p,1471b,499s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 65i,12n,97p,1471b,1195s stack positions out of 5000i,500n,10000p,200000b,50000s
 {A:/Latex/fonts/enc/dvips/fontname/texnansi.enc} <C:\Users\xrobe_000\AppData\
-Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk> <C:\Users\xrob
-e_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> 
-<C:\Users\xrobe_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi630
-\ecrm1200.pk> <C:\Users\xrobe_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkna
-ppen\ec\dpi720\ecrm1200.pk> <C:\Users\xrobe_000\AppData\Local\MiKTeX\2.9\fonts\
-pk\ljfour\jknappen\ec\dpi878\ecrm1728.pk> <C:\Users\xrobe_000\AppData\Local\MiK
-TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\xrobe_000\App
-Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi690\ecrm1000.pk> <C:\Users
-\xrobe_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi1250\ecrm172
-8.pk> <C:\Users\xrobe_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
-dpi600\ecrm1200.pk><A:/Latex/fonts/type1/bitstrea/charter/bchr8a.pfb><A:/Latex/
-fonts/type1/mathdesign/mdbch/md-chr7y.pfb><A:/Latex/fonts/type1/public/txfonts/
-t1xtt.pfb>
-Output written on TUDthesis.pdf (22 pages, 197528 bytes).
+Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk> <C:\Users\xrob
+e_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk> 
+<C:\Users\xrobe_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
+\ecrm1000.pk> <C:\Users\xrobe_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkna
+ppen\ec\dpi630\ecrm1200.pk> <C:\Users\xrobe_000\AppData\Local\MiKTeX\2.9\fonts\
+pk\ljfour\jknappen\ec\dpi720\ecrm1200.pk> <C:\Users\xrobe_000\AppData\Local\MiK
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi878\ecrm1728.pk> <C:\Users\xrobe_000\App
+Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users
+\xrobe_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi690\ecrm1000
+.pk> <C:\Users\xrobe_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
+pi1250\ecrm1728.pk> <C:\Users\xrobe_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\jknappen\ec\dpi600\ecrm1200.pk><A:/Latex/fonts/type1/bitstrea/charter/bchr8a.
+pfb><A:/Latex/fonts/type1/bitstrea/charter/bchri8a.pfb><A:/Latex/fonts/type1/ma
+thdesign/mdbch/md-chr7t.pfb><A:/Latex/fonts/type1/mathdesign/mdbch/md-chr7y.pfb
+><A:/Latex/fonts/type1/adobe/utopia/putri8a.pfb><A:/Latex/fonts/type1/public/tx
+fonts/t1xtt.pfb>
+Output written on TUDthesis.pdf (23 pages, 239260 bytes).
 PDF statistics:
- 451 PDF objects out of 1000 (max. 8388607)
+ 496 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  35 words of extra memory for PDF output out of 10000 (max. 10000000)
 
