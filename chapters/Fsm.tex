@@ -1,6 +1,5 @@
 \section{FSM}
 \label{sec:fsm}
-
 Wir betrachten nun etwas genauer wir unsere Konzept einer FSM zur 
 Kontrollflusssteurung in C++11 umgesetzt haben, dazu gehört neben der Wahl 
 der Klassenstruktur auch die Einbindung nützlicher Features von C++11 um die
@@ -14,6 +13,12 @@ Zur Modellierung einer FSM haben wir ein Konzept aus einer Kontroller Klasse \te
 
 Erst die abgeleiteten Klassen implementieren eine genau Funktionalität, wie z.B. einer Wandfolgen oder eine Transition nach einem bestimmten Ereignis. Diese Klassen sind in dem dafür vorgesehen namespace \texttt{TRAL::STATES} und \texttt{TRAL::TRANSITIONS} zu finden.
 
+\begin{figure}[htbp] 
+  \centering
+     \includegraphics[width=\textwidth]{images/fsm-uml.png}
+  \caption{Vereinfachtes Klassendiagram der FSM}
+  \label{fig:KlassendiagramFSM}
+\end{figure}
 
 %%%%%%
 \subsubsection{FSM}
@@ -26,7 +31,7 @@ Die wichtigste Funktion diese Klasse ist die \texttt{tick} Funktion, diese wird 
 \paragraph{\texttt{FSM::transit}}
 
 Beim Statewechsel wird zuerst dem aktuell noch aktiven State signalisiert das der nun verlassen wird, dabei kann der State
-zum Beispiel genutzte Ressourcen wieder freigeben. Darauffolgend wird dem neuen State signalisiert das dieser nun betreten wird und nötige Ressourcen belegen kann.
+zum Beispiel genutzte Ressourcen wieder freigeben. Darauf folgend wird dem neuen State signalisiert das dieser nun betreten wird und nötige Ressourcen belegen kann.
 
 
 %%%%%%
@@ -48,7 +53,7 @@ Die Klasse \texttt{TRAL::State} ist eine abstrakte Basisklasse von dieser werden
 
 Jeder instantiierbarer State muss alle virtuellen Funktion der State Klasse implementieren. Dadurch wird gewährleistet das die FSM Klasse mit jede beliegen State Implementation arbeiten kann.
 
-Die statische Funktion \texttt{createFromJson} erlaubt ein State Instanz aus einem JSON Objekt erzeugen, dazu mehr unter \ref{fsm-Deserialisieren}. Als virtuelles Interface sind die Funktion \texttt{tick}, \texttt{onEnter}, \texttt{OnExit} und weitere Debug-Funktionen vorgesehen.
+Die statische Funktion \texttt{createFromJson} erlaubt ein State Instanz aus einem JSON Objekt erzeugen Als virtuelles Interface sind die Funktion \texttt{tick}, \texttt{onEnter}, \texttt{OnExit} und weitere Debug-Funktionen vorgesehen.
 
 \texttt{onEnter} und \texttt{OnExit} signalisieren das zuvor beschriebene betreten und verlassen eines States bei der Ausführung. Die Funktion \texttt{tick} wird für den aktiven State zyklisch ausgeführt und berechnet einen neue Ausgabe. Dabei kann über den globalen \texttt{MachineState} auf die aktuellen Sensorwerte zugegriffen und die Aktoren angesteuert.
 
@@ -69,6 +74,7 @@ Für unsere Implementierung haben wir folge Transitionen abgeleitet:
 	\item SensorLevel
 \end{itemize}
 
+%%%%%%
 \subsubsection{Interfaces}
 
 Um die Übergabe von Informationen zwischen zum Beispiel einem State und einer Transtion zu gewährleisten haben wir zwei Interfaces für States verwendet. 
@@ -76,7 +82,4 @@ States die das Interface \texttt{IFinishable} einbinden können entscheiden wenn
 
 Ebenso können States die das Interface \texttt{ApproachPoint} implementieren ein Zielpunkt gesetzt bekommen. Diese Interface wird auch zum Beispiel vom State \texttt{ApproachPoint} implementiert und erlaubt so ein verlegen des definierten Punktes bei der Ausführung.
 
-Soll muss zum Beispiel der \textit{owner} State der \texttt{Finished} Transition das dazugehörige Interface implementieren, sollte dies nicht der Fall sein kommt es zu einem Laufzeitfehler.
-
-\subsection{Deserialisieren}
-\label{fsm-Deserialisieren}
+Soll muss zum Beispiel der \textit{owner} State der \texttt{Finished} Transition das dazugehörige Interface implementieren, sollte dies nicht der Fall sein kommt es zu einem Laufzeitfehler während der Ausführung.

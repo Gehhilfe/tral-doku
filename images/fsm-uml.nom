@@ -1,0 +1,11 @@
+[TRAL::FSM|-current:State|+tick();+setRoot(root:State)]
+[<abstract>TRAL::State||+tick()]0.1 root-+1 fsm[TRAL::FSM]
+[<abstract>TRAL::Transition|-fsm:FSM;-target:State|+isTriggered()]0..n-+1[TRAL::State]
+[TRAL::States::BasicFollowWall]-:>[TRAL::State]
+[TRAL::States::FollowWallRamp]-:>[TRAL::States::BasicFollowWall]
+[TRAL::Transitions::Always]-:>[TRAL::Transition]
+[TRAL::Transitions::SensorLevel]-:>[TRAL::Transition]
+[TRAL::Transitions::ArucoGateFound]-:>[TRAL::Transition]
+[<interface> TRAL::States::IFinishable|+isFinished()]
+[<interface> TRAL::States::IPointTarget|+setTarget(point:Vec3f)]
+#zoom: 0.7
