@@ -1,6 +1,6 @@
 \select@language {ngerman}
 \contentsline {section}{\numberline {1}Einleitung}{1}
-\contentsline {subsection}{\numberline {1.1}Ne Ebene tiefer}{1}
+\contentsline {subsection}{\numberline {1.1}Motivation}{1}
 \contentsline {subsubsection}{\numberline {1.1.1}Undsoweiter}{1}
 \contentsline {section}{\numberline {2}Zur Verf\IeC {\"u}gung gestellte Hardware des Autos}{2}
 \contentsline {section}{\numberline {3}Grundlegendes zu \textit {ROS} und Lubuntu}{3}
@@ -13,36 +13,35 @@
 \contentsline {subsubsection}{\numberline {4.1.1}Grundlage?}{5}
 \contentsline {subsubsection}{\numberline {4.1.2}GRUNDLAGE!}{5}
 \contentsline {section}{\numberline {5}Projektkoordination}{6}
-\contentsline {subsection}{\numberline {5.1}Noch grundlegender}{6}
-\contentsline {subsubsection}{\numberline {5.1.1}Grundlage?}{6}
-\contentsline {subsubsection}{\numberline {5.1.2}GRUNDLAGE!}{6}
-\contentsline {section}{\numberline {6}Aufgabenstellung}{7}
-\contentsline {subsection}{\numberline {6.1}Pflichtimplementierung}{7}
-\contentsline {subsubsection}{\numberline {6.1.1}Vertiefungspakete}{7}
-\contentsline {section}{\numberline {7}L\"osung Pflichtimplementierung}{9}
-\contentsline {subsection}{\numberline {7.1}Autonomes Fahren}{9}
-\contentsline {subsection}{\numberline {7.2}Erkennung ArUco-Marker}{11}
-\contentsline {subsection}{\numberline {7.3}Durchfahren von Toren}{12}
-\contentsline {section}{\numberline {8}FSM}{15}
-\contentsline {subsection}{\numberline {8.1}Klassenstruktur}{15}
-\contentsline {subsubsection}{\numberline {8.1.1}FSM}{15}
-\contentsline {paragraph}{\texttt {FSM::tick}}{15}
-\contentsline {paragraph}{\texttt {FSM::transit}}{15}
-\contentsline {subsubsection}{\numberline {8.1.2}State}{15}
-\contentsline {subsubsection}{\numberline {8.1.3}Transition}{16}
-\contentsline {subsubsection}{\numberline {8.1.4}Interfaces}{16}
-\contentsline {subsection}{\numberline {8.2}Deserialisieren}{17}
-\contentsline {section}{\numberline {9}JSON}{18}
-\contentsline {section}{\numberline {10}Graphische Programmierung}{19}
-\contentsline {subsection}{\numberline {10.1}UMLet - Das Programm}{19}
-\contentsline {subsection}{\numberline {10.2}uxf-Datei in JSON-Format umwandeln}{20}
-\contentsline {subsection}{\numberline {10.3}Einlesen einer JSON-Datei}{20}
-\contentsline {section}{\numberline {11}Doku}{22}
-\contentsline {subsection}{\numberline {11.1}Noch grundlegender}{22}
-\contentsline {subsubsection}{\numberline {11.1.1}Grundlage?}{22}
-\contentsline {subsubsection}{\numberline {11.1.2}GRUNDLAGE!}{22}
-\contentsline {section}{\numberline {12}Fazit}{23}
-\contentsline {subsection}{\numberline {12.1}Noch grundlegender}{23}
-\contentsline {subsubsection}{\numberline {12.1.1}Grundlage?}{23}
-\contentsline {subsubsection}{\numberline {12.1.2}GRUNDLAGE!}{23}
-\contentsline {section}{\numberline {A}Erster Anhang}{24}
+\contentsline {subsection}{\numberline {5.1}Verantwortungsbereiche}{6}
+\contentsline {subsection}{\numberline {5.2}Zeitplanung und Meilensteine}{6}
+\contentsline {subsection}{\numberline {5.3}Trello}{6}
+\contentsline {section}{\numberline {6}Aufgabenstellung}{8}
+\contentsline {subsection}{\numberline {6.1}Pflichtimplementierung}{8}
+\contentsline {subsubsection}{\numberline {6.1.1}Vertiefungspakete}{8}
+\contentsline {section}{\numberline {7}L\"osung Pflichtimplementierung}{10}
+\contentsline {subsection}{\numberline {7.1}Autonomes Fahren}{10}
+\contentsline {subsection}{\numberline {7.2}Erkennung ArUco-Marker}{12}
+\contentsline {subsection}{\numberline {7.3}Durchfahren von Toren}{13}
+\contentsline {section}{\numberline {8}FSM}{17}
+\contentsline {subsection}{\numberline {8.1}Klassenstruktur}{17}
+\contentsline {subsubsection}{\numberline {8.1.1}FSM}{17}
+\contentsline {paragraph}{\texttt {FSM::tick}}{17}
+\contentsline {paragraph}{\texttt {FSM::transit}}{18}
+\contentsline {subsubsection}{\numberline {8.1.2}State}{18}
+\contentsline {subsubsection}{\numberline {8.1.3}Transition}{18}
+\contentsline {subsubsection}{\numberline {8.1.4}Interfaces}{19}
+\contentsline {section}{\numberline {9}JSON}{20}
+\contentsline {section}{\numberline {10}Graphische Programmierung}{21}
+\contentsline {subsection}{\numberline {10.1}UMLet - Das Programm}{21}
+\contentsline {subsection}{\numberline {10.2}uxf-Datei in JSON-Format umwandeln}{22}
+\contentsline {subsection}{\numberline {10.3}Einlesen einer JSON-Datei}{22}
+\contentsline {section}{\numberline {11}Doku}{24}
+\contentsline {subsection}{\numberline {11.1}Noch grundlegender}{24}
+\contentsline {subsubsection}{\numberline {11.1.1}Grundlage?}{24}
+\contentsline {subsubsection}{\numberline {11.1.2}GRUNDLAGE!}{24}
+\contentsline {section}{\numberline {12}Fazit}{25}
+\contentsline {subsection}{\numberline {12.1}Noch grundlegender}{25}
+\contentsline {subsubsection}{\numberline {12.1.1}Grundlage?}{25}
+\contentsline {subsubsection}{\numberline {12.1.2}GRUNDLAGE!}{25}
+\contentsline {section}{\numberline {A}Erster Anhang}{26}
