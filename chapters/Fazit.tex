@@ -1,16 +1,17 @@
 \section{Fazit}
 \label{sec:fazit}
+\subsection{Das Fahrzeug}
+Die durch das Projektseminar Echtzeitsysteme gewonnenen Erfahrungen sind sehr vielschichtig. Wie schon in der Einleitung zu vermuten war, galt es technisch gesehen Hürden aus den unterschiedlichsten Bereichen zu überwinden. Von Verständnis von komplexer Software wie \textit{ROS} und Einsicht in das eingesetzte Linux Echtzeitbetriebssystem zu erlangen, bis zur Änderung der Software auf dem \textit{Fujitsu}-Board. Auf der anderen Seite vom Interpretieren und Verwenden der Sensorwerte bis hin zum Ansteuern der Motoren und ermitteln der Regler-Werte. Im Laufe der Bearbeitungszeit stellten wir schnell fest, dass vor allem in der Hardware die Schwierigkeiten lagen. Dabei war weniger die Prozessorleistung oder Rechengeschwindigkeit das Problem, diese reichte auch für das Verarbeiten des Videostroms, als vielmehr die Sensorik, Aktorik und der Aufbau des Fahrzeugs. Selbst mit eigens entwickelter Filterung waren die Ultraschall Werte nicht immer zuverlässig, vor allem, wenn der Winkel zum reflektierenden Objekt ungünstig war, als ganz besonders an Ecken und Kanten. Da diese in den Fluren des Instituts jedoch oft ähnlich aufgebaut waren, ließ sich auch hier mit Software ganz gut Abhilfe schaffen. Deutlich problematischer erwies sich der Hall-Sensor. An der Grenze der Erreichbarkeit *bessere Formulierung?* angebracht, reichte es schon beispielsweise beim Einschalten den Aufbau gegenüber dem Fahrgestell zu verschieben. Somit wurde der Abstand gegenüber der im Rad montierten Magnete minimal vergrößert und eine Messung unmöglich. Auch entdeckten wir nicht immer erklärbare Sprünge *kann man das so sagen?* der Hall-Sensor-Werte, was verständlicherweise ein präzises Fahren sehr erschwerte. Als recht umständlich erwies sich auch die Lenkung. Nicht der große Wendekreis und das langsame Einlenken, unter anderem verursacht durch den schweren Aufbau, stellten hier die größte Schwierigkeit dar. Sondern vor allem die Nichtlinearität, die zudem in jede Richtung unterschiedlich war. Einen Pfad zu berechnen und das Fahrzeug entsprechend zu steuern stellte sich, wie in Kapitel 7.3 bereits beschrieben, als stellenweise sehr unpräzise heraus. Wir haben daher wieder auf eine Regelung, unterstützt von einer geraden Wand zurückgegriffen, was für unsere Zwecke sehr gut funktionierte, das allgemeine Problem mit der Lenkung jedoch nur umgeht. Die Kamera funktionierte nach korrektem Kalibrieren und Ansprechen mit \textit{ROS} recht zuverlässig. Hier haben wir lediglich den Aufbau etwas modifiziert und den Neigungswinkel der Kamera leicht aufgerichtet, sodass wir vor dem Fahrzeug mehr Strecke überwachen konnten.
 
-Hallo?
+%%%%%%%%%%
+\subsection{Projektkoordination und Aufgabenstellung}
+Die Projektkoordination war ebenfalls ein wichtiger Aspekt, den wir bedenken mussten. Unser Vorgehen basierte hier auf Erfahrungswerten vorhergehender Gruppenarbeiten. In diesem Projektseminar ergab sich jedoch die Möglichkeit, diese auch über ein ganzes Semester hinweg anzuwenden und zu optimieren, wodurch alle Beteiligten ihren Erfahrungsschatz erweitern konnten. Das Gleiche gilt natürlich auch für das Erstellen und Vortragen von Präsentationen. Dazu hatten wir in dieser Veranstaltung gleich zweimal die Möglichkeit, was natürlich auch sinnvoll ist, da auch die Aufgabenstellung in zwei Blöcke geteilt werden kann. Dabei wurde unser Vorgehen, wie bereits erwähnt in den zweiwöchentlichen Treffen unterstützt, in denen die wichtigsten Fortschritte und Ziele besprochen wurden. Zu Beginn waren dabei natürlich vornehmlich die Grundlagen und Pflichtimplementierungen oder der Zwischenvortrag Thema. Gegen Ende ging es mehr um die eingeschlagene Richtung und das Thema der vom Team gewählten Vertiefung. Diese musste zwar abgesprochen werden, war jedoch ansonsten komplett freigestellt. Hier war positiv, dass dies nicht nur als Zusatzaufgabe gedacht war, sondern im Gegenteil die Pflichtimplementierungen eher nur die Basis darstellten und Möglichkeit zur Einarbeitung gaben, sodass auch für das selbst gewählte Thema ausreichend Zeit zur Verfügung stand um auch neue oder alternative Ideen zu verfolgen.
 
-%%%%%%
-\subsection{Noch grundlegender}
-Text
+*freie Aufgabenstellung*
 
-%%%%%%
-\subsubsection{Grundlage?}
-Test
+%%%%%%%%
+\subsection{Unsere Lösung und Ausblick}
+Wie bereits in der Einleitung angekündigt und später detaillierter erläutert, *stimmt das so?* stellt die Nachhaltigkeit und deren praktische Umsetzung das Kernthema unserer Lösung dar. Dies wurde uns schon von Beginn an, mit auf den Weg gegeben. Die Wichtigkeit dieses Themas kristallisierte sich jedoch immer mehr heraus. Vor allem bei den bereits angesprochenen Problemen mit der Sensorik und Aktorik darf nicht in jedem Semester von neuem bei null begonnen werden. Hier ist es sehr wichtig einzelne Aspekte, wie zum Beispiel die Steuerung, oder die Parameter für die Regelung, korrekt und zuverlässig zur Verfügung zu stellen. Unsere Lösung erlaubt dann, das Verknüpfen solcher einzelnen Einheiten zu einer abstrahierten *richtiges Wort?* Software. Nur so kann auf Dauer eine Entwicklung stattfinden, bei der am Ende auch ein sowohl stabiles als auch nachvollziehbares Ergebnis steht.
 
-%%%%%%
-\subsubsection{GRUNDLAGE!}
-Text
+*Carolo Cup*
+*unsere Lösung als sinnvoll darstellen* -> besonders Sinnvoll, da viele Elemente (Regelung, Sensorik)
