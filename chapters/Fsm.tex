@@ -1,13 +1,12 @@
-\section{FSM}
+\section{Finite-state-machine}
 \label{sec:fsm}
 Wir betrachten nun etwas genauer, wie wir unser Konzept einer FSM zur 
 Kontrollflusssteurung in \textit{C++11} umgesetzt haben. Dazu gehört neben der Wahl 
-der Klassenstruktur auch die Einbindung nützlicher Features von C++11, um die
+der Klassenstruktur auch die Einbindung nützlicher Features von \textit{C++11}, um die
 Speicherverwaltung zu optimieren.
 
-
 %%%%%%
-\subsection{Klassenstruktur}
+%%\subsection{Klassenstruktur}
 Zur Modellierung einer FSM haben wir uns ein Konzept aus einer Kontroller Klasse \texttt{FSM} und zwei abstrakten Basisklassen \texttt{State} und \texttt{Transition} überlegt. Dabei stellen die abstrakten Basisklassen nur eine standardisiertes Interface bereit und erlauben somit eine schnelle Implementation von neuen, abgeleiteten Klassen.
 
 
@@ -21,7 +20,7 @@ Erst die abgeleiteten Klassen implementieren eine genaue Funktionalität, wie z.
 \end{figure}
 
 %%%%%%
-\subsubsection{FSM}
+\subsection{FSM}
 Die Klasse \texttt{FSM} implementiert die komplette Kontrollflusssteuerung und kümmert sich auch um das Laden einer FSM, die zuvor graphisch mit UMLet (siehe Abschnitt 10, graphische Programmierung) erstellt wurde. Ebenso hält diese Klasse immer eine aktuelle Referenz zu dem globalen \texttt{MachineState}. In dieser Klasse sind alle Sensorinformationen aufbereitet konsolidiert.
 
 \paragraph{\texttt{FSM::tick}}
@@ -58,7 +57,7 @@ Die statische Funktion \texttt{createFromJson} erlaubt, ein State-Instanz aus ei
 
 
 %%%%%%
-\subsubsection{Transition}
+\subsection{Transition}
 Ähnlich der State-Klasse fungiert die \texttt{TRAL::Transition} als abstrakte Basisklasse für alle Transitionen. Ebenso existiert auch eine statische Funktion \texttt{createFromJson}, um gespeicherte Instanzen aus einem JSON-Objekt zu laden. 
 
 Jede Transition gehört zu einem eindeutigen Besitzer \textit{owner} und zu einem eindeutigen Ziel \textit{target}. Sollte der \textit{owner}-State aktuell aktiv sein, wird jede Transition mit der Funktion \texttt{isTriggerd} auf Auslösung durch die FSM Instanz nach der Ausführung des States überprüft.
@@ -74,7 +73,7 @@ Für unsere Implementierung haben wir folge Transitionen abgeleitet:
 \end{itemize}
 
 %%%%%%
-\subsubsection{Interfaces}
+\subsection{Interfaces}
 
 Um die Übergabe von Informationen zwischen, zum Beispiel, einem State und einer Transtion zu gewährleisten, haben wir zwei Interfaces für States verwendet. 
 States, die das Interface \texttt{IFinishable} einbinden, können entscheiden, wann sie Abgeschlossen sind. Zum Beispiel implementiert der State \texttt{ApproachPoint} dieses Interface und signalisiert die Ankunft an dem definierten Punkt.
