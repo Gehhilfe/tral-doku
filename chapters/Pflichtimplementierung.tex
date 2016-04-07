@@ -17,6 +17,7 @@ Anfangs haben wir versucht, das Regelverhalten durch einen PID-Regler abzubilden
 Der vernachlässigte \textit{I}-Anteil sorgt für eine zeitliche Integration der Regelabweichung. Dies führt bei dem Auto zu einer sich mit höherem \textit{I}-Anteil einstellenden Trägheit, die das Auto unflexibler macht.
 
 Der Basiscode, mit dem der Regler implementiert wird, ist in der Klasse \textit{BasicFollowWall} (Zeile 53) zu sehen:
+
 \begin{lstlisting}
 double y = _p * e + _esum * _i * PID_S + _d * (e - _eold)*PID_INVS;
 \end{lstlisting}
