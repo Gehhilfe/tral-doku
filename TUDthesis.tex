@@ -28,7 +28,50 @@ accentcolor=tud1c,
 	basicstyle=\footnotesize,% basic font setting
 }
 
+\newcommand\JSONnumbervaluestyle{\color{blue}}
+\newcommand\JSONstringvaluestyle{\color{red}}
 
+% switch used as state variable
+\newif\ifcolonfoundonthisline
+
+\makeatletter
+
+\lstdefinestyle{json}
+{
+  showstringspaces    = false,
+  keywords            = {false,true},
+  alsoletter          = 0123456789.,
+  morestring          = [s]{"}{"},
+  stringstyle         = \ifcolonfoundonthisline\JSONstringvaluestyle\fi,
+  MoreSelectCharTable =%
+    \lst@DefSaveDef{`:}\colon@json{\processColon@json},
+  basicstyle          = \ttfamily,
+  keywordstyle        = \ttfamily\bfseries,
+}
+
+% flip the switch if a colon is found in Pmode
+\newcommand\processColon@json{%
+  \colon@json%
+  \ifnum\lst@mode=\lst@Pmode%
+    \global\colonfoundonthislinetrue%
+  \fi
+}
+
+\lst@AddToHook{Output}{%
+  \ifcolonfoundonthisline%
+    \ifnum\lst@mode=\lst@Pmode%
+      \def\lst@thestyle{\JSONnumbervaluestyle}%
+    \fi
+  \fi
+  %override by keyword style if a keyword is detected!
+  \lsthk@DetectKeywords% 
+}
+
+% reset the switch at the end of line
+\lst@AddToHook{EOL}%
+  {\global\colonfoundonthislinefalse}
+
+\makeatother
 
 \newcommand{\getmydate}{%
 \iflanguage{ngerman}{%
@@ -65,7 +108,7 @@ accentcolor=tud1c,
   \author{Tim Burkert, Robert Königstein, Lars Stein, Adrian Weber}
   %do not add your student id!
   %\studentidx{1145456}
-	\thesisnumber{ES-B-0060}
+	%\thesisnumber{ES-B-0060}
   \referee{Prof. Dr. rer. nat. A. Schürr}{Géza Kulcsár, MSc.}
 	
   \iflanguage{english}{
@@ -96,8 +139,8 @@ accentcolor=tud1c,
 	\cleardoublepage
 	\listoffigures
 	\cleardoublepage
-	\listoftables
-	\cleardoublepage
+	%\listoftables
+	%\cleardoublepage
 	
 	\pagenumbering{arabic}
 	
@@ -122,8 +165,8 @@ accentcolor=tud1c,
 	\cleardoublepage
 	\input{chapters/GraphischeProgrammierung}
 	\cleardoublepage
-	\input{chapters/Doku}
-	\cleardoublepage
+	%\input{chapters/Doku}
+	%\cleardoublepage
 	\input{chapters/Fazit}
 	\cleardoublepage
 	%%% Infos zu Latex
@@ -133,8 +176,8 @@ accentcolor=tud1c,
 	%\bibliographystyle{alphadin}
 	%\bibliography{literature}
 	
-	\begin{appendix}
-	\section{Erster Anhang}
-	\end{appendix}
+	%\begin{appendix}
+	%\section{Erster Anhang}
+	%\end{appendix}
 
 \end{document}
