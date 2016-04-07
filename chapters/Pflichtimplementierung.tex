@@ -70,7 +70,6 @@ Der Regler um eine lineare Funktion erhält als Eingangsgrößen den Startabstan
 \newline
 \newline
 Diese Funktion wurde im \texttt{FollowWallRamp}-State implementiert. In diesem State gibt es eine Funktion, \texttt{setTarget(Vec3f target)}, die den Zielpunkt der Regelung festlegt. Dazu wird, je nach Wandseite, die x-Koordinate den übergebenen Parametern angepasst. Dabei wird die x-Koordinate des Ziels um den aktuellen Wandabstand erhöht bzw. erniedrigt, sodass sie den wirklichen Wandabstand enthält. Des Weiteren wird der y-Abstand des Zielpunktes für die messbaren Halldistanzwerte normalisiert.
-\newpage
 \begin{figure}[H]
 \begin{lstlisting}[style=json]
 void FollowWallRamp::setTarget(Vec3f target)
