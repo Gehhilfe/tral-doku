@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.1)  4 APR 2016 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.6)  7 APR 2016 01:00
 entering extended mode
-**D:/Dokumente/Repos/PSES/tral-doku/TUDthesis.tex
-(D:/Dokumente/Repos/PSES/tral-doku/TUDthesis.tex
+**D:/Documents/GitRepository/PSES_Repo/tral-doku/TUDthesis.tex
+(D:/Documents/GitRepository/PSES_Repo/tral-doku/TUDthesis.tex
 LaTeX2e <2015/10/01> patch level 2
 Babel <3.9n> and hyphenation patterns for 69 languages loaded.
 (tudthesis.cls
@@ -1237,7 +1237,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
  []
 
-[-1{C:/Users/AW/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+[-1{C:/Users/Adrian W/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 Non-PDF special ignored!
 
 
@@ -1359,7 +1359,7 @@ File: ts15ch.fd 2008/06/23 Fontinst v1.927 font definitions for TS1/5ch.
 
 
 ] (chapters/Projektkoordination.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 7704) has occurred while \output is active []
 
  [7
 
@@ -1464,10 +1464,10 @@ Package pdftex.def Info: images/umlet-bsp.png used on input line 15.
 (chapters/Doku.tex) [26
 
 
-] (chapters/Fazit.tex) [27
+] (chapters/Fazit.tex [27
 
 
-] [28
+]) [28] [29
 
 
 ] (TUDthesis.aux)
@@ -1477,12 +1477,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  10462 strings out of 493634
- 157325 string characters out of 3141324
+ 157364 string characters out of 3141304
  308850 words of memory out of 3000000
  13518 multiletter control sequences out of 15000+200000
  187641 words of font info for 120 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 65i,16n,97p,1659b,1352s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 65i,16n,97p,2751b,1352s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/texnansi.enc}{C:/
 Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/tuddesign/fonts/type1/softmake/charter/5chb8a.pfb><C:/Program Files/tuddesign
@@ -1495,9 +1495,9 @@ rogram Files/tuddesign/fonts/type1/softmake/stafford/5sfr8a.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/bitstrea/charter/bchr8a.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/mathdesign/mdbch/md-chr7y.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on TUDthesis.pdf (35 pages, 524752 bytes).
+Output written on TUDthesis.pdf (36 pages, 532300 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
+ 183 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  55 words of extra memory for PDF output out of 10000 (max. 10000000)
 
