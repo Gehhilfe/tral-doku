@@ -33,12 +33,7 @@
 \contentsline {subsection}{\numberline {10.1}UMLet - Das Programm}{22}
 \contentsline {subsection}{\numberline {10.2}uxf-Datei in JSON-Format umwandeln}{23}
 \contentsline {subsection}{\numberline {10.3}Einlesen einer JSON-Datei}{23}
-\contentsline {section}{\numberline {11}Doku}{25}
-\contentsline {subsection}{\numberline {11.1}Noch grundlegender}{25}
-\contentsline {subsubsection}{\numberline {11.1.1}Grundlage?}{25}
-\contentsline {subsubsection}{\numberline {11.1.2}GRUNDLAGE!}{25}
-\contentsline {section}{\numberline {12}Fazit}{26}
-\contentsline {subsection}{\numberline {12.1}Das Fahrzeug}{26}
-\contentsline {subsection}{\numberline {12.2}Projektkoordination und Aufgabenstellung}{26}
-\contentsline {subsection}{\numberline {12.3}Unsere L\IeC {\"o}sung und Ausblick}{27}
-\contentsline {section}{\numberline {A}Erster Anhang}{28}
+\contentsline {section}{\numberline {11}Fazit}{25}
+\contentsline {subsection}{\numberline {11.1}Das Fahrzeug}{25}
+\contentsline {subsection}{\numberline {11.2}Projektkoordination und Aufgabenstellung}{25}
+\contentsline {subsection}{\numberline {11.3}Unsere L\IeC {\"o}sung und Ausblick}{26}

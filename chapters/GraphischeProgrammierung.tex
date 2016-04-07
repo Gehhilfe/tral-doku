@@ -65,8 +65,8 @@ JSON-Datei besteht aus zwei geschachtelten Objekten mit verschieden Angaben zum
 Programm und zur Programmversion. Im inneren Objekt ist eine Eigenschaft mit dem
 Schlüssel „\textit{element}“ angelegt. Diese Eigenschaft enthält ein Array aller Zustände
 und Transitionen.
-Mittels der Anweisung "`\textit{j["`diagram"']["`element"']}"' greift man
-darauf zu und kann mittels des Iterators "`\textit{auto jelem}"' darüber iterieren.
+Mittels der Anweisung \texttt{j["diagram"]["{}element"]} greift man
+darauf zu und kann mittels des Iterators \texttt{auto jelem} darüber iterieren.
 
 \begin{figure}[thp]
 \begin{lstlisting}[style=json]
@@ -77,8 +77,8 @@ for(auto jelem: j["diagram"]["element"])
 \caption{FSM.cpp, Zeile 32}
 \end{figure}
 
-Jedes Element besteht aus vier Eigenschaften: „\textit{id}“, „\textit{coordinates}“,
-„\textit{panel\_attributes}“ und „\textit{additional\_attributes}“. Relevant ist die „id“, um
+Jedes Element besteht aus vier Eigenschaften: \textit{id}, \textit{coordinates},
+\textit{panel\_attributes} und \textit{additional\_attributes}. Relevant ist die \textit{id}, um
 zwischen Zuständen und Transition zu unterscheiden und die „panel\_attributes“.
 Hier ist ein String mit der Parameterliste gespeichert.
 
@@ -90,7 +90,7 @@ entsprechende Zustandsobjekt bereits existieren.
 
 Der String der Parameterliste enthält noch Steuerzeichen und es wird, je
 nachdem, ob Zustände oder Transitionen erstellt werden, die Funktion
-„\textit{manipulateString}“ entsprechend aufgerufen, um diese zu entfernen. Der
+\texttt{manipulateString} entsprechend aufgerufen, um diese zu entfernen. Der
 verbleibende String ist jetzt ebenfalls nach dem Schema eines JSON Objektes
 aufgebaut und enthält Eigenschaften mit Schlüsselwort und zugeordnetem Wert.
 Daraus kann nun ein JSON-Objekt erstellt werden:
@@ -109,11 +109,11 @@ json jstate = json::parse(jstr);
 Für ein solches JSON-Objekt hatten wir bereits in den Zustands- und
 Transitionsklassen Methoden implementiert, die daraus konkrete Objekte für unsere
 FSM erstellen können (\textbf{Transition.cpp} / \textbf{State.cpp}).
-Hier kann, an Hand der Information die unter dem Schlüssel „\textit{type}“ im JSON-Objekt
+Hier kann, an Hand der Information die unter dem Schlüssel \texttt{type} im JSON-Objekt
 gespeichert ist, entschieden werden, welche Art von Zustand/Transition vorliegt
 und der entsprechende Konstruktor aufgerufen werden.
 Im Falle eines Zustandes ist das Prozedere des Einlesens beendet und das
-Zustandsobjekt wird in einem Array am Index seiner „id“ gespeichert.
+Zustandsobjekt wird in einem Array am Index seiner \textit{id} gespeichert.
 
 \begin{figure}[thp]
 \begin{lstlisting}
