@@ -18,8 +18,8 @@ in eine JSON-Datei, für die weitere Verwendung, umwandeln.
 \end{figure}
 
 Das Programm UMLet besteht aus drei Teilbereichen. Im linken Teil, dem
-Arbeitsbereich, wird der eigentliche Automat erstellt. Hierfür können, schon
-vordefinierte, Zustände und Transitionen aus der Vorlage „TRAL\_State-Machine“
+Arbeitsbereich, wird der eigentliche Automat erstellt. Hierfür können schon
+vordefinierte Zustände und Transitionen aus der Vorlage „TRAL\_State-Machine“
 oben rechts in den Arbeitsbereich gezogen und entsprechend den eigenen Wünschen
 miteinander verbunden werden. Die Vorlagen-Datei „TRAL\_State-Machine.uxf“ muss
 hierfür im innerhalb des Programmordners unter „\textit{../palettes}“ hinterlegt sein.
@@ -58,20 +58,19 @@ in eine JSON-Datei umwandeln.
 Da man mittels des Aufrufs „xyz“ unseren FSM-Node starten kann und ihm diese
 JSON-Datei übergeben muss, lässt sich dieser ganze Abschnitt leicht mit einem
 Shell-Skript zum Umwandeln und Starten der FSM realisieren.
-(skript?!)
 
 
 %%%%%%
 \subsection{Einlesen einer JSON-Datei}
-Unsere Klasse „\textbf{FSM}“ besitzt ein Methode namens „\textit{loadFile}“, welche den Automaten
+Unsere Klasse „\textbf{FSM}“ besitzt eine Methode namens „\textit{loadFile}“, welche den Automaten
 im JSON-Format einlesen kann. Die Implementierung muss natürlich an den Aufbau
 der Datei durch das graphische Tool angepasst sein. Die resultierende
 JSON-Datei besteht aus zwei geschachtelten Objekten mit verschieden Angaben zum
 Programm und zur Programmversion. Im inneren Objekt ist eine Eigenschaft mit dem
 Schlüssel „\textit{element}“ angelegt. Diese Eigenschaft enthält ein Array aller Zustände
 und Transitionen.
-Mittels der Anweisung "\textit{j["diagram"]["element"]}" greift man
-darauf zu und kann mittels des Iterators „\textit{auto jelem}“ darüber iterieren.
+Mittels der Anweisung "`\textit{j["`diagram"']["`element"']}"' greift man
+darauf zu und kann mittels des Iterators "`\textit{auto jelem}"' darüber iterieren.
 
 \begin{figure}[thp]
 \begin{tabular}{c}
@@ -86,9 +85,9 @@ for(auto jelem: j["diagram"]["element"])
 \end{figure}
 
 Jedes Element besteht aus vier Eigenschaften: „\textit{id}“, „\textit{coordinates}“,
-„\textit{panel\_attributes}“ und „\textit{additional\_attributes}“. Relevant ist die „id“ um
+„\textit{panel\_attributes}“ und „\textit{additional\_attributes}“. Relevant ist die „id“, um
 zwischen Zuständen und Transition zu unterscheiden und die „panel\_attributes“.
-Hier ist ein String mit der Parameterliste gespeichert ist.
+Hier ist ein String mit der Parameterliste gespeichert.
 
 Es muss insgesamt zwei Mal über alle Elemente iteriert werden. Beim ersten
 Durchgang werden alle Zustände erstellt, beim Zweiten alle Transitionen. Dies
@@ -97,8 +96,8 @@ Nachfolgezustand enthalten. Um diesen Verweis erstellen zu können, muss das
 entsprechende Zustandsobjekt bereits existieren.
 
 Der String der Parameterliste enthält noch Steuerzeichen und es wird, je
-nachdem ob Zustände oder Transitionen erstellt werden, die Funktion
-„\textit{manipulateString}“ entsprechend aufgerufen um diese zu entfernen. Der
+nachdem, ob Zustände oder Transitionen erstellt werden, die Funktion
+„\textit{manipulateString}“ entsprechend aufgerufen, um diese zu entfernen. Der
 verbleibende String ist jetzt ebenfalls nach dem Schema eines JSON Objektes
 aufgebaut und enthält Eigenschaften mit Schlüsselwort und zugeordnetem Wert.
 Daraus kann nun ein JSON-Objekt erstellt werden:
@@ -116,11 +115,11 @@ json jstate = json::parse(jstr);
 \end{figure}
 
 
-Für ein solches JSON-Objekt, hatten wir bereits für die Zustands- und
-Transitionsklasse Methoden implementiert, die daraus konkrete Objekt für unsere
+Für ein solches JSON-Objekt hatten wir bereits für die Zustands- und
+Transitionsklasse Methoden implementiert, die daraus konkrete Objekte für unsere
 FSM erstellen können (\textbf{Transition.cpp} / \textbf{State.cpp}).
-Hier kann, anhand der Information die unter dem Schlüssel „\textit{type}“ im JSON-Objekt
-gespeichert ist, entschieden werden welche Art von Zustand/Transitions vorliegt
+Hier kann, an Hand der Information die unter dem Schlüssel „\textit{type}“ im JSON-Objekt
+gespeichert ist, entschieden werden, welche Art von Zustand/Transition vorliegt
 und der entsprechende Konstruktor aufgerufen werden.
 Im Falle eines Zustandes ist das Prozedere des Einlesens beendet und das
 Zustandsobjekt wird in einem Array am Index seiner „id“ gespeichert.

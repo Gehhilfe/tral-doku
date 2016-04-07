@@ -6,6 +6,13 @@ Im Folgenden wird eine kurze Einleitung zu ROS und dem Betriebssystem, das auf d
 Im Projektseminar wird die Middleware \textit{ROS} eingesetzt. \textit{ROS} steht für \textit{Robot Operating System} und wird heute vor allem von der \textit{Open Source Robotics Foundation} fortentwickelt. Die Software ist dabei kein klassisches Betriebssystem, wie der Name vermuten lässt, sondern eine Middleware, die auf einem der klassischen Betriebssysteme (aktuell werden Mac-OS und Linux stabil unterstützt) aufgespielt wird. \textit{ROS} sorgt für eine starke Hardware-Abstraktion, sodass fast beliebige Hardware eingesetzt werden kann und diese auch fast beliebig austauschbar ist. \textit{ROS} abstrahiert diese und stellt allgemeine Programmierschnittstellen bereit. Zudem ermöglicht \textit{ROS} eine einfache, standardisierte Kommunikation zwischen den Hard- und Softwarekomponenten.
 Die drei Hauptmotivationen, \textit{ROS} einzusetzen sind Modularität, Portabilität und Wiederverwendbarkeit, sowie eine vereinfachte Softwareentwicklung (einfache Interfaces, Debugging, Monitoring, Testen).
 
+\begin{figure}[htbp] 
+	\centering
+	\includegraphics[width=150pt]{images/rosorg-logo1.png}
+	\caption{Logo von \textit{ROS}}
+	\label{fig:LogoROS}
+\end{figure}
+
 %%%%%%
 \subsubsection{Wie ist \textit{ROS} aufgebaut?}
 \textit{ROS} besteht hauptsächlich aus drei Komponenten, die beliebig kombiniert und vernetzt werden können: \textit{Nodes}, \textit{Topics} und \textit{Services}. \textit{Nodes} sind Softwareknoten, die dafür zuständig sind, bereitgestellte Daten aufzunehmen und zu prozessieren. In den \textit{Nodes} ist die Intelligenz des Autos implementiert und dort werden durch die Sensorik gewonnene Daten in Befehle für die Aktorik des Autos umgesetzt. 
