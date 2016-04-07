@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.16)  7 APR 2016 13:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.16)  7 APR 2016 14:57
 entering extended mode
 **./TUDthesis.tex
 (TUDthesis.tex
@@ -1374,7 +1374,12 @@ LaTeX Font Warning: Font shape `TS1/5ch/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
 (Font)              for symbol `textdegree' on input line 5.
 
-) [6
+)
+Underfull \hbox (badness 10000) in paragraph at lines 3--112
+
+ []
+
+[6
 
 
 ] (chapters/Projektkoordination.tex
@@ -1416,55 +1421,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--18
 
  []
 
-[12
 
-
-]
 Underfull \hbox (badness 10000) in paragraph at lines 24--29
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 56--68
+[12
+
+
+]
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 31.
+ (A:\Latex\tex\latex\txfonts\t1txtt.fd
+File: t1txtt.fd 2000/12/15 v3.1
+) [13]
+Underfull \hbox (badness 10000) in paragraph at lines 57--69
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--68
+Underfull \hbox (badness 10000) in paragraph at lines 57--69
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--68
+Underfull \hbox (badness 10000) in paragraph at lines 57--69
 
  []
 
 [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 95--99
+Underfull \hbox (badness 10000) in paragraph at lines 96--100
 
  []
 
-<images/scharfeRampe.png, id=105, 144.54pt x 108.405pt>
+<images/scharfeRampe.png, id=106, 144.54pt x 108.405pt>
 File: images/scharfeRampe.png Graphic file (type png)
 
 <use images/scharfeRampe.png>
-Package pdftex.def Info: images/scharfeRampe.png used on input line 102.
+Package pdftex.def Info: images/scharfeRampe.png used on input line 103.
 (pdftex.def)             Requested size: 250.0pt x 187.50993pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--112
+Underfull \hbox (badness 10000) in paragraph at lines 108--113
 
  []
 
-
-Underfull \vbox (badness 2799) has occurred while \output is active []
-
- [16 <./images/scharfeRampe.png>]) [17] (chapters/Fsm.tex
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 11.
-
-(A:\Latex\tex\latex\txfonts\t1txtt.fd
-File: t1txtt.fd 2000/12/15 v3.1
-)
-<images/fsm-uml.png, id=113, 1040.88875pt x 346.29375pt>
+[16 <./images/scharfeRampe.png>]) [17] (chapters/Fsm.tex
+<images/fsm-uml.png, id=114, 1040.88875pt x 346.29375pt>
 File: images/fsm-uml.png Graphic file (type png)
 
 <use images/fsm-uml.png>
@@ -1534,7 +1535,7 @@ Here is how much of TeX's memory you used:
  13455 multiletter control sequences out of 15000+200000
  46244 words of font info for 87 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 65i,13n,97p,1639b,1253s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 65i,12n,97p,1639b,1253s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\xrobe_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
 600\tcrm1000.pk>{A:/Latex/fonts/enc/dvips/fontname/texnansi.enc} <C:\Users\xrob
 e_000\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk> 
@@ -1552,9 +1553,9 @@ onts\pk\ljfour\jknappen\ec\dpi1250\ecrm1728.pk> <C:\Users\xrobe_000\AppData\Loc
 al\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk><A:/Latex/fonts/ty
 pe1/bitstrea/charter/bchr8a.pfb><A:/Latex/fonts/type1/mathdesign/mdbch/md-chr7y
 .pfb><A:/Latex/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on TUDthesis.pdf (35 pages, 4536150 bytes).
+Output written on TUDthesis.pdf (35 pages, 4537423 bytes).
 PDF statistics:
- 585 PDF objects out of 1000 (max. 8388607)
+ 586 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  70 words of extra memory for PDF output out of 10000 (max. 10000000)
 

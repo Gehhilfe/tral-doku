@@ -19,19 +19,18 @@ in eine JSON-Datei, für die weitere Verwendung, umwandeln.
 
 Das Programm UMLet besteht aus drei Teilbereichen. Im linken Teil, dem
 Arbeitsbereich, wird der eigentliche Automat erstellt. Hierfür können schon
-vordefinierte Zustände und Transitionen aus der Vorlage „TRAL\_State-Machine“
-oben rechts in den Arbeitsbereich gezogen und entsprechend den eigenen Wünschen
+vordefinierte Zustände und Transitionen aus der Vorlage „TRAL\_State-Machine“,
+oben rechts im Fenster, in den Arbeitsbereich gezogen und entsprechend den eigenen Wünschen
 miteinander verbunden werden. Die Vorlagen-Datei „TRAL\_State-Machine.uxf“ muss
-hierfür im innerhalb des Programmordners unter „\textit{../palettes}“ hinterlegt sein.
+hierfür innerhalb des Programmordners unter „\textit{../palettes}“ hinterlegt sein.
 Sie kann natürlich ebenfalls von dort geöffnet und gegebenenfalls erweitert
 werden.
 Der wichtigste Bereich ist das Fenster für die Eigenschaften der Objekte unten rechts in der Ecke.
 Bei Zuständen werden zwischen den beiden horizontalen Trennlinien, bei
-Transitionen direkt unter dem stilisierten Pfeil (\textit{lt=->}), alle Parameter
+Transitionen direkt unter dem stilisierten Pfeil \textit{lt=->}, alle Parameter
 angegeben, die zur späteren Erstellungen der Objekte benötigt werden. Diese
 Liste muss stets vollständig sein. Sie ist durch unsere konkrete
-Implementierung im Quellcode vorgegeben und lässt sich in unserer Dokumentation
-am Ende dieses Dokumentes nachlesen.
+Implementierung im Quellcode vorgegeben.
 Wichtig hierbei ist, den Zuständen und Transitionen eindeutige „\textit{ids}“ zu
 vergeben, da diese grundlegend für den logischen Fluss sind.
 
@@ -107,8 +106,8 @@ json jstate = json::parse(jstr);
 \end{figure}
 
 
-Für ein solches JSON-Objekt hatten wir bereits für die Zustands- und
-Transitionsklasse Methoden implementiert, die daraus konkrete Objekte für unsere
+Für ein solches JSON-Objekt hatten wir bereits in den Zustands- und
+Transitionsklassen Methoden implementiert, die daraus konkrete Objekte für unsere
 FSM erstellen können (\textbf{Transition.cpp} / \textbf{State.cpp}).
 Hier kann, an Hand der Information die unter dem Schlüssel „\textit{type}“ im JSON-Objekt
 gespeichert ist, entschieden werden, welche Art von Zustand/Transition vorliegt
