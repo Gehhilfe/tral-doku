@@ -21,6 +21,8 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Wie ist \textit  {ROS} aufgebaut?}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Betriebssystem}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Welche M\IeC {\"o}glichkeiten von \textit  {ROS} haben wir genutzt?}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Kamerakalibrierung mit \textit  {ROS}}}{5}}
+\newlabel{fig:CamKalib}{{3.2}{5}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Arbeitsumgebung und Material}{6}}
 \newlabel{sec:arbeitsumgebung}{{4}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces \textit  {ArUco}-Tor aus Sicht der Kamera}}{6}}
@@ -32,7 +34,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Dokumentation: \textit  {Trello}}{8}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Trello-Liste mit Karten}}{8}}
 \newlabel{fig:Trello-Liste}{{5.1}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Trello-Karte mit Fortschrittsbalken und weiteren Informationen}}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces \textit  {Trello}-Karte mit Fortschrittsbalken und weiteren Informationen}}{9}}
 \newlabel{fig:Trello-Karte mit Fortschrittsbalken, Kommentar und weiteren Informationen}{{5.2}{9}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Aufgabenstellung}{10}}
 \newlabel{sec:aufgabenstellung}{{6}{10}}
@@ -41,11 +43,13 @@
 \@writefile{toc}{\contentsline {section}{\numberline {7}L\"osung Pflichtimplementierung}{12}}
 \newlabel{sec:lsgpflicht}{{7}{12}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Autonomes Fahren}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces Array mit Zust\IeC {\"a}nden, FSM.cpp, Z.39}}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces Reglerimplementierung, \texttt  {BasicFollowWall.cpp}, Z.53}}{13}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Erkennung \textit  {ArUco}-Marker}{14}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Durchfahren von Toren}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Schematische Darstellung des Fahrens einer Rampe}}{18}}
-\newlabel{fig:ScharfeRampe}{{7.2}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Anpassen des Wandabstandes, \texttt  {FollowWallRamp.cpp}, Z.19}}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Reglungsparemeter aktualisieren, \texttt  {FollowWallRamp.cpp}, Z.58}}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces Schematische Darstellung des Fahrens einer Rampe}}{18}}
+\newlabel{fig:ScharfeRampe}{{7.4}{18}}
 \@writefile{toc}{\contentsline {section}{\numberline {8}FSM}{19}}
 \newlabel{sec:fsm}{{8}{19}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Klassenstruktur}{19}}
@@ -59,18 +63,18 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.4}Interfaces}{21}}
 \@writefile{toc}{\contentsline {section}{\numberline {9}JSON}{22}}
 \newlabel{sec:json}{{9}{22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.1}{\ignorespaces Aufbau einer einfachen JSON-Datei}}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.1}{\ignorespaces Aufbau einer einfachen \textit  {JSON}-Datei}}{22}}
 \@writefile{toc}{\contentsline {section}{\numberline {10}Graphische Programmierung}{23}}
 \newlabel{sec:graphischeprogrammierung}{{10}{23}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.1}UMLet - Das Programm}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10.1}{\ignorespaces UMLet Oberfl\IeC {\"a}che}}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.1}{\ignorespaces \textit  {UMLet} Oberfl\IeC {\"a}che}}{23}}
 \newlabel{fig:umlet}{{10.1}{23}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}uxf-Datei in JSON-Format umwandeln}{24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}uxf-Datei in \textit  {JSON}-Format umwandeln}{24}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Einlesen einer JSON-Datei}{24}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10.2}{\ignorespaces FSM.cpp, Zeile 32}}{24}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10.3}{\ignorespaces JSON-Objekt erstellen, FSM.cpp, Z.37}}{25}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10.4}{\ignorespaces Array mit Zust\IeC {\"a}nden, FSM.cpp, Z.39}}{25}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10.5}{\ignorespaces Behandlung von Transitionen, FSM.cpp, Z.53-56}}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.2}{\ignorespaces \texttt  {FSM.cpp}, Zeile 32}}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.3}{\ignorespaces \textit  {JSON}-Objekt erstellen, \texttt  {FSM.cpp}, Z.37}}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.4}{\ignorespaces Array mit Zust\IeC {\"a}nden, \texttt  {FSM.cpp}, Z.39}}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.5}{\ignorespaces Behandlung von Transitionen, \texttt  {FSM.cpp}, Z.53-56}}{25}}
 \@writefile{toc}{\contentsline {section}{\numberline {11}Fazit}{26}}
 \newlabel{sec:fazit}{{11}{26}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Das Fahrzeug}{26}}

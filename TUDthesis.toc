@@ -20,7 +20,6 @@
 \contentsline {subsection}{\numberline {7.1}Autonomes Fahren}{12}
 \contentsline {subsection}{\numberline {7.2}Erkennung \textit {ArUco}-Marker}{14}
 \contentsline {subsection}{\numberline {7.3}Durchfahren von Toren}{15}
-<<<<<<< HEAD
 \contentsline {section}{\numberline {8}FSM}{19}
 \contentsline {subsection}{\numberline {8.1}Klassenstruktur}{19}
 \contentsline {subsubsection}{\numberline {8.1.1}FSM}{19}
@@ -32,28 +31,9 @@
 \contentsline {section}{\numberline {9}JSON}{22}
 \contentsline {section}{\numberline {10}Graphische Programmierung}{23}
 \contentsline {subsection}{\numberline {10.1}UMLet - Das Programm}{23}
-\contentsline {subsection}{\numberline {10.2}uxf-Datei in JSON-Format umwandeln}{24}
+\contentsline {subsection}{\numberline {10.2}uxf-Datei in \textit {JSON}-Format umwandeln}{24}
 \contentsline {subsection}{\numberline {10.3}Einlesen einer JSON-Datei}{24}
 \contentsline {section}{\numberline {11}Fazit}{26}
 \contentsline {subsection}{\numberline {11.1}Das Fahrzeug}{26}
 \contentsline {subsection}{\numberline {11.2}Projektkoordination und Aufgabenstellung}{26}
 \contentsline {subsection}{\numberline {11.3}Unsere L\IeC {\"o}sung und Ausblick}{27}
-=======
-\contentsline {section}{\numberline {8}FSM}{18}
-\contentsline {subsection}{\numberline {8.1}Klassenstruktur}{18}
-\contentsline {subsubsection}{\numberline {8.1.1}FSM}{18}
-\contentsline {paragraph}{\texttt {FSM::tick}}{18}
-\contentsline {paragraph}{\texttt {FSM::transit}}{19}
-\contentsline {subsubsection}{\numberline {8.1.2}State}{19}
-\contentsline {subsubsection}{\numberline {8.1.3}Transition}{19}
-\contentsline {subsubsection}{\numberline {8.1.4}Interfaces}{20}
-\contentsline {section}{\numberline {9}JSON}{21}
-\contentsline {section}{\numberline {10}Graphische Programmierung}{22}
-\contentsline {subsection}{\numberline {10.1}UMLet - Das Programm}{22}
-\contentsline {subsection}{\numberline {10.2}uxf-Datei in \textit {JSON}-Format umwandeln}{23}
-\contentsline {subsection}{\numberline {10.3}Einlesen einer JSON-Datei}{23}
-\contentsline {section}{\numberline {11}Fazit}{25}
-\contentsline {subsection}{\numberline {11.1}Das Fahrzeug}{25}
-\contentsline {subsection}{\numberline {11.2}Projektkoordination und Aufgabenstellung}{25}
-\contentsline {subsection}{\numberline {11.3}Unsere L\IeC {\"o}sung und Ausblick}{26}
->>>>>>> ee95d32c8a8574d36a382f5f92690e3c80a4e7a3

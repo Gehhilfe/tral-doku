@@ -53,10 +53,9 @@ Mittels der vorgestellten Konstrukte kann nun eine beliebige Abfolge von Aktivit
 Durch die vorgestellte Modularität ist das autonome Verhalten des Autos um fast beliebige Szenarien erweiterbar. 
 
 %%%%%%
-<<<<<<< HEAD
 \subsection{Erkennung \textit{ArUco}-Marker}
 Die Erkennung der \textit{ArUco}-Marker ist durch einen ROS-Node implementiert. Dort haben wir zur Kamerakalibrierung eine Kombination der ROS-internen Kalibrierung und der Kalibrierung der  \textbf{OpenCV}\footnote[1]{http://opencv.org/} Open Source Software Bibliothek verwendet. Zur Kalibrierung wird ein Schachbrettmuster verwendet. Dabei übergibt man der OpenCV-Routine die Anzahl der Kästchen und deren Größe. Nachdem die Eckpunkte erkannt sind, werden verschiedene Orientierungen im Raum dargestellt, um eine robuste Kalibrierung zu erreichen. Anhand der Zuordnungen von Raum zu Bildkoordinaten kann nun die Kalibrierungsmatrix berechnet werden. 
-\textit{OpenCV} erkennt nun die ArUco-Marker und kann deren Position errechnen. Die Daten dazu werden anschließend in einer \textit{ROS}-Topic gepublisht. Unserer Anwendungssoftware stehen so die genauen Bildkoordinaten der Marker und ihre Ausrichtung im Raum zur Verfügung.
+\textit{OpenCV} erkennt nun die \textit{ArUco}-Marker und kann deren Position errechnen. Die Daten dazu werden anschließend in einer \textit{ROS}-Topic gepublisht. Unserer Anwendungssoftware stehen so die genauen Bildkoordinaten der Marker und ihre Ausrichtung im Raum zur Verfügung.
 %%%%%%
 \subsection{Durchfahren von Toren}
 Nachdem nun dargestellt wurde, wie \textit{ArUco}-Marker erkannt werden, bedarf es nur noch eines weiteren Schrittes, um das erkannte \textit{ArUco}-Tor zu durchfahren. Man muss anhand der erhaltenen Koordinaten den weiteren Streckenverlauf so umplanen, dass das Tor durchfahren wird. 
