@@ -17,9 +17,13 @@ Anfangs haben wir versucht, das Regelverhalten durch einen PID-Regler abzubilden
 Der vernachlässigte \textit{I}-Anteil sorgt für eine zeitliche Integration der Regelabweichung. Dies führt bei dem Auto zu einer sich mit höherem \textit{I}-Anteil einstellenden Trägheit, die das Auto unflexibler macht.
 
 Der Basiscode, mit dem der Regler implementiert wird, ist in der Klasse \textit{BasicFollowWall} (Zeile 53) zu sehen:
-\begin{lstlisting}
+\begin{figure}[thp]
+	\begin{lstlisting}[style=json]
 double y = _p * e + _esum * _i * PID_S + _d * (e - _eold)*PID_INVS;
 \end{lstlisting}
+\centering
+\caption{Array mit Zuständen, FSM.cpp, Z.39}
+\end{figure}
 
 Hierbei stellen \textit{PID\_S} und \textit{PID\_INVS} Konstanten dar (0.0125 und 80). \textit{\_p} ist der Proportionalanteil, \textit{\_i} der Integralanteil und \textit{\_d} der Differentialanteil. e ist die Eingangsgröße, \textit{\_esum} die aufaddierten Wandabstände der vergangenen Durchläufe und \textit{\_eold} der Wert des letzten Durchlaufes. \textit{y} ist der daraus berechnete Lenkeinschlag.
 \newline
