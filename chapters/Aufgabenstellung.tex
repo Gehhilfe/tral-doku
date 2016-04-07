@@ -5,7 +5,7 @@ Im Folgenden soll die genaue Aufgabenstellung, sowie unsere daraus abgeleiteten 
 
 %%%%%%
 \subsection{Pflichtimplementierung}
-Als Pflichtteil des Projektseminars wurde generell das Thema "`Autonomes Fahren mittels Sensorik"', "`Kamerainbetriebnahme und Erkennung von ArUco-Markern"', sowie als Anwendung von Letzterem, das "`Durchfahren von ArUco-Toren"' vorgegeben.  
+Als Pflichtteil des Projektseminars wurde generell das Thema "`Autonomes Fahren mittels Sensorik"', "`Kamerainbetriebnahme und Erkennung von \textit{ArUco}-Markern"', sowie als Anwendung von Letzterem, das "`Durchfahren von \textit{ArUco}-Toren"' vorgegeben.  
 
 Aus dem Standardprogramm abgeleitet haben wir aufgrund der örtlichen Rahmenbedingungen festgelegt, dass sich unser Auto autonom in der vorgegebenen Umgebung bewegen können soll. 
 Wir haben folgende Annahmen zur Aufgabenstellung getroffen:
@@ -13,10 +13,10 @@ Wir haben folgende Annahmen zur Aufgabenstellung getroffen:
 	\item Das Auto hat mindestens eine Wand rechts oder links von sich, zu der es seinen Abstand mittels eines Ultraschallsensors absolut bestimmen kann
 	\item Es wird lediglich mit der vorgegebenen Hardware eine Realisierung des autonomen Fahrens durchgeführt, sodass unser Code auch von nachfolgenden Gruppen einfach genutzt werden kann
 	\item Das autonome Fahren wird durch einen Zustandsautomaten realisiert
-	\item ArUco-Tore bestehen aus zwei Markern, die in beliebigem Abstand (jedoch begrenzt durch den Kamerablickwinkel) voneinander nebeneinander im Flur stehen
+	\item \textit{ArUco}-Tore bestehen aus zwei Markern, die in beliebigem Abstand (jedoch begrenzt durch den Kamerablickwinkel) voneinander nebeneinander im Flur stehen
 	\item Der Winkel von der Verbindungsgerade zwischen den Markern und den Normalen auf den Markern ist nahe $90^\circ$
-	\item Es ist kein starkes Gegenlicht vorhanden, da dies den Kontrast der Kamera und damit die Erkennung der ArUco-Marker, stark beeinträchtigt
-	\item Beim Durchfahren von ArUco-Toren befindet sich entweder rechts oder links des Autos eine Wand, zu der es seinen Abstand mittels Ultraschallsensorik absolut bestimmen kann
+	\item Es ist kein starkes Gegenlicht vorhanden, da dies den Kontrast der Kamera und damit die Erkennung der \textit{ArUco}-Marker, stark beeinträchtigt
+	\item Beim Durchfahren von \textit{ArUco}-Toren befindet sich entweder rechts oder links des Autos eine Wand, zu der es seinen Abstand mittels Ultraschallsensorik absolut bestimmen kann
 \end{itemize}
 
 %%%%%%
@@ -24,7 +24,7 @@ Wir haben folgende Annahmen zur Aufgabenstellung getroffen:
 Als optionale Vertiefungspakete wurden "`\textit{ROS}-basierte Simulation"', "`Fernsteuerung und Car2Car Kommunikation"', sowie "`Inertialsensorik und erweiterte Regelung"' vorgeschlagen.
 
 Von den vorgeschlagenen Möglichkeiten haben wir die Fernsteuerung, sowie die erweiterte Regelung aufgegriffen. Bezüglich der Fernsteuerung haben wir im Rahmen der Hobit-Berufsbildungsmesse eine Steuerung mittels XBOX-Controller eingebunden. Dieses Projekt wurde jedoch nicht weitergehend verfolgt, da es einen anderen Kernel benötigte, als unsere Hauptimplementierung. 
-Als erweiterte Regelung haben wir uns als Ziel gesetzt, eine Regelung nach einer linearen Funktion zu implementieren, mittels welcher auch die Durchfahrt der ArUco-Tore realisiert werden soll. Dazu haben wir die Annahme getroffen, dass sich das Auto rechts oder links entlang einer Wand bewegt, zu der der Abstand linear zu- oder abnehmen soll. 
+Als erweiterte Regelung haben wir uns als Ziel gesetzt, eine Regelung nach einer linearen Funktion zu implementieren, mittels welcher auch die Durchfahrt der \textit{ArUco}-Tore realisiert werden soll. Dazu haben wir die Annahme getroffen, dass sich das Auto rechts oder links entlang einer Wand bewegt, zu der der Abstand linear zu- oder abnehmen soll. 
 \newline
 Als Schwerpunkt haben wir uns jedoch als Ziel gesetzt, ein System zur modularen Programmierung des Autos zu entwickeln, das es ermöglicht, beliebige Funktionsbausteine zu programmieren und einfach zur Funktionalität des Autos hinzuzufügen. Dies schafft eine größtmögliche Flexibilität und Erweiterbarkeit der Software des Autos. 
 Zur Implementierung des Systems haben wir uns für einen Zustandsautomaten entschieden, der, um Logik und Implementierung zu trennen, mit einer \textit{JSON}-Datei (genaueres zu JSON, s. Abschnitt 8) parametrisiert werden soll. 

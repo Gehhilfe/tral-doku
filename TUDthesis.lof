@@ -1,13 +1,15 @@
 \select@language {ngerman}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Das Auto}}{3}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Logo von \textit {ROS}}}{4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \textit {ArUco}-Tor aus Sicht der Kamera}}{6}
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Trello-Liste mit Karten}}{8}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Trello-Karte mit Fortschrittsbalken und weiteren Informationen}}{9}
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Schematische Darstellung des Fahrens einer Rampe}}{16}
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Vereinfachtes Klassendiagram der FSM}}{18}
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Aufbau einer einfachen JSON-Datei}}{21}
-\contentsline {figure}{\numberline {10.1}{\ignorespaces UMLet Oberfl\IeC {\"a}che}}{22}
-\contentsline {figure}{\numberline {10.2}{\ignorespaces FSM.cpp, Zeile 32}}{23}
-\contentsline {figure}{\numberline {10.3}{\ignorespaces JSON-Objekt erstellen, FSM.cpp, Z.37}}{24}
-\contentsline {figure}{\numberline {10.4}{\ignorespaces Array mit Zust\IeC {\"a}nden, FSM.cpp, Z.39}}{24}
-\contentsline {figure}{\numberline {10.5}{\ignorespaces Behandlung von Transitionen, FSM.cpp, Z.53-56}}{24}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Array mit Zust\IeC {\"a}nden, FSM.cpp, Z.39}}{13}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Schematische Darstellung des Fahrens einer Rampe}}{18}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Vereinfachtes Klassendiagram der FSM}}{19}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Aufbau einer einfachen JSON-Datei}}{22}
+\contentsline {figure}{\numberline {10.1}{\ignorespaces UMLet Oberfl\IeC {\"a}che}}{23}
+\contentsline {figure}{\numberline {10.2}{\ignorespaces FSM.cpp, Zeile 32}}{24}
+\contentsline {figure}{\numberline {10.3}{\ignorespaces JSON-Objekt erstellen, FSM.cpp, Z.37}}{25}
+\contentsline {figure}{\numberline {10.4}{\ignorespaces Array mit Zust\IeC {\"a}nden, FSM.cpp, Z.39}}{25}
+\contentsline {figure}{\numberline {10.5}{\ignorespaces Behandlung von Transitionen, FSM.cpp, Z.53-56}}{25}
