@@ -51,7 +51,17 @@ kompiliert hat, lassen sich diese Dateien mittels des einfachen Konsolen-Befehls
 \end{figure}
 
 in eine \textit{JSON}-Datei umwandeln.
-Da man mittels des Aufrufs „xyz“ unseren FSM-Node starten kann und ihm diese
+Da man mittels des Aufrufs
+ 
+\begin{figure}[thp]
+\begin{lstlisting}[style=json]
+rosrun tral_fsm tral_fsm_node -g automat.json
+\end{lstlisting}
+\centering
+%\caption{Aufbau einer einfachen \textit{JSON}-Datei}
+\end{figure}
+
+unseren FSM-Node starten kann und ihm diese
 \textit{JSON}-Datei übergeben muss, lässt sich dieser ganze Abschnitt leicht mit einem
 Shell-Skript zum Umwandeln und Starten der FSM realisieren.
 

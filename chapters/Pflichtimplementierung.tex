@@ -20,7 +20,7 @@ Der Basiscode, mit dem der Regler implementiert wird, ist in der Klasse \texttt{
 
 \begin{figure}[H]
 \begin{lstlisting}[style=json]
-double y = _p * e + _esum * _i * PID_S + _d * (e - _eold)*PID_INVS;
+double y = _p*e + _esum*_i*PID_S + _d*(e - _eold)*PID_INVS;
 \end{lstlisting}
 \centering
 \caption{Reglerimplementierung, \texttt{BasicFollowWall.cpp}, Z.53}
