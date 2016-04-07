@@ -28,3 +28,10 @@ Zu bemerken ist jedoch, dass bei uns der Echtzeitkernel nicht zum Einsatz kam, d
 \subsection{Welche Möglichkeiten von \textit{ROS} haben wir genutzt?}
 Aufgrund unserer Codestruktur eines Zustandsautomaten, den wir in einem \textit{ROS-Node} implementiert haben, kamen wir mit wenigen \textit{ROS-Nodes} aus. Wie später beschrieben, haben wir lediglich drei \textit{Nodes} für das generelle Management der Sensorik und Aktorik, der Kamera und für die FSM (Finite State Machine/Zustandsautomat) benötigt. Wie gerade beschrieben, nutzen wir für die Kommunikation zwischen den einzelnen Codebausteinen ausschließlich \textit{Topics}.
 Zur Kamerakalibrierung haben wir eine Kombination der von \textit{ROS} bereitgestellten Kalibrierungsmöglichkeiten und Methoden der \textit{OpenCV}-Bibliothek genutzt. Später in der Ausarbeitung werden wir noch ausführlicher auf die Details der Implementierung und Umsetzung eingehen.
+
+\begin{figure}[htbp] 
+	\centering
+	\includegraphics[width=\textwidth]{images/schachbrett.png}
+	\caption{Kamerakalibrierung mit \textit{ROS}}
+	\label{fig:CamKalib}
+\end{figure}

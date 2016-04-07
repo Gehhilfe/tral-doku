@@ -1,28 +1,28 @@
 \section{Graphische Programmierung}
 \label{sec:graphischeprogrammierung}
 
-Trotz der einfachen Lesbarkeit der JSON-Datei, verliert man bei immer größer
+Trotz der einfachen Lesbarkeit der \textit{JSON}-Datei, verliert man bei immer größer
 werdenden Automaten leicht den Überblick und der Vorteil der Trennung von Logik
 und Programmierung geht verloren. Um dieses Problem zu beheben setzen wir das
-Programm „\textbf{UMLet}“ \footnote[1]{http://www.umlet.com} ein. Es ist ein freies Open-Source UML-Tool, welches mehrere
+Programm \textbf{\textit{UMLet}} \footnote[1]{http://www.umlet.com} ein. Es ist ein freies Open-Source UML-Tool, welches mehrere
 Diagramm-Arten unterstützt, unter anderem State-Charts. Gespeichert werden
 diese Diagramme im xml-Format, welches wir mit dem Programm „\textbf{xml2json}“ \footnote[2]{https://github.com/Cheedoong/xml2json}
-in eine JSON-Datei, für die weitere Verwendung, umwandeln.
+in eine \textit{JSON}-Datei, für die weitere Verwendung, umwandeln.
 %%%%%%
 \subsection{UMLet - Das Programm}
 \begin{figure}[ht]
 \centering 
 \includegraphics[width=0.90\textwidth]{images/umlet-bsp.png} 
-\caption{UMLet Oberfläche}
+\caption{\textit{UMLet} Oberfläche}
 \label{fig:umlet}
 \end{figure}
 
-Das Programm UMLet besteht aus drei Teilbereichen. Im linken Teil, dem
+Das Programm \textit{UMLet} besteht aus drei Teilbereichen. Im linken Teil, dem
 Arbeitsbereich, wird der eigentliche Automat erstellt. Hierfür können schon
-vordefinierte Zustände und Transitionen aus der Vorlage „TRAL\_State-Machine“,
+vordefinierte Zustände und Transitionen aus der Vorlage \textit{TRAL\_State-Machine},
 oben rechts im Fenster, in den Arbeitsbereich gezogen und entsprechend den eigenen Wünschen
-miteinander verbunden werden. Die Vorlagen-Datei „TRAL\_State-Machine.uxf“ muss
-hierfür innerhalb des Programmordners unter „\textit{../palettes}“ hinterlegt sein.
+miteinander verbunden werden. Die Vorlagen-Datei \textit{TRAL\_State-Machine.uxf} muss
+hierfür innerhalb des Programmordners unter \textit{../palettes} hinterlegt sein.
 Sie kann natürlich ebenfalls von dort geöffnet und gegebenenfalls erweitert
 werden.
 Der wichtigste Bereich ist das Fenster für die Eigenschaften der Objekte unten rechts in der Ecke.
@@ -31,14 +31,14 @@ Transitionen direkt unter dem stilisierten Pfeil \textit{lt=->}, alle Parameter
 angegeben, die zur späteren Erstellungen der Objekte benötigt werden. Diese
 Liste muss stets vollständig sein. Sie ist durch unsere konkrete
 Implementierung im Quellcode vorgegeben.
-Wichtig hierbei ist, den Zuständen und Transitionen eindeutige „\textit{ids}“ zu
+Wichtig hierbei ist, den Zuständen und Transitionen eindeutige \textit{ids} zu
 vergeben, da diese grundlegend für den logischen Fluss sind.
 
 
 %%%%%%
-\subsection{uxf-Datei in JSON-Format umwandeln}
-Die uxf-Dateien, welche von UMLet erstellt werden, sind intern im xml-Format
-gespeichert. Sofern man das Tool "xml2json" bereits heruntergeladen und
+\subsection{uxf-Datei in \textit{JSON}-Format umwandeln}
+Die uxf-Dateien, welche von \textit{UMLet} erstellt werden, sind intern im xml-Format
+gespeichert. Sofern man das Tool \textit{xml2json} bereits heruntergeladen und
 kompiliert hat, lassen sich diese Dateien mittels des einfachen Konsolen-Befehls
 
 \begin{figure}[thp]
@@ -47,23 +47,23 @@ kompiliert hat, lassen sich diese Dateien mittels des einfachen Konsolen-Befehls
 
 \end{lstlisting}
 \centering
-%\caption{Aufbau einer einfachen JSON-Datei}
+%\caption{Aufbau einer einfachen \textit{JSON}-Datei}
 \end{figure}
 
-in eine JSON-Datei umwandeln.
+in eine \textit{JSON}-Datei umwandeln.
 Da man mittels des Aufrufs „xyz“ unseren FSM-Node starten kann und ihm diese
-JSON-Datei übergeben muss, lässt sich dieser ganze Abschnitt leicht mit einem
+\textit{JSON}-Datei übergeben muss, lässt sich dieser ganze Abschnitt leicht mit einem
 Shell-Skript zum Umwandeln und Starten der FSM realisieren.
 
 
 %%%%%%
 \subsection{Einlesen einer JSON-Datei}
-Unsere Klasse „\textbf{FSM}“ besitzt eine Methode namens „\textit{loadFile}“, welche den Automaten
-im JSON-Format einlesen kann. Die Implementierung muss natürlich an den Aufbau
+Unsere Klasse \texttt{FSM} besitzt eine Methode namens \texttt{loadFile}, welche den Automaten
+im \textit{JSON}-Format einlesen kann. Die Implementierung muss natürlich an den Aufbau
 der Datei durch das graphische Tool angepasst sein. Die resultierende
-JSON-Datei besteht aus zwei geschachtelten Objekten mit verschieden Angaben zum
+\textit{JSON}-Datei besteht aus zwei geschachtelten Objekten mit verschieden Angaben zum
 Programm und zur Programmversion. Im inneren Objekt ist eine Eigenschaft mit dem
-Schlüssel „\textit{element}“ angelegt. Diese Eigenschaft enthält ein Array aller Zustände
+Schlüssel \texttt{element} angelegt. Diese Eigenschaft enthält ein Array aller Zustände
 und Transitionen.
 Mittels der Anweisung \texttt{j["diagram"]["{}element"]} greift man
 darauf zu und kann mittels des Iterators \texttt{auto jelem} darüber iterieren.
@@ -74,12 +74,12 @@ for(auto jelem: j["diagram"]["element"])
 
 \end{lstlisting}
 \centering
-\caption{FSM.cpp, Zeile 32}
+\caption{\texttt{FSM.cpp}, Zeile 32}
 \end{figure}
 
-Jedes Element besteht aus vier Eigenschaften: \textit{id}, \textit{coordinates},
-\textit{panel\_attributes} und \textit{additional\_attributes}. Relevant ist die \textit{id}, um
-zwischen Zuständen und Transition zu unterscheiden und die „panel\_attributes“.
+Jedes Element besteht aus vier Eigenschaften: \texttt{id}, \texttt{coordinates},
+\texttt{panel\_attributes} und \texttt{additional\_attributes}. Relevant ist die \texttt{id}, um
+zwischen Zuständen und Transition zu unterscheiden und die \textit{panel\_attributes}.
 Hier ist ein String mit der Parameterliste gespeichert.
 
 Es muss insgesamt zwei Mal über alle Elemente iteriert werden. Beim ersten
@@ -91,9 +91,9 @@ entsprechende Zustandsobjekt bereits existieren.
 Der String der Parameterliste enthält noch Steuerzeichen und es wird, je
 nachdem, ob Zustände oder Transitionen erstellt werden, die Funktion
 \texttt{manipulateString} entsprechend aufgerufen, um diese zu entfernen. Der
-verbleibende String ist jetzt ebenfalls nach dem Schema eines JSON Objektes
+verbleibende String ist jetzt ebenfalls nach dem Schema eines \textit{JSON}-Objektes
 aufgebaut und enthält Eigenschaften mit Schlüsselwort und zugeordnetem Wert.
-Daraus kann nun ein JSON-Objekt erstellt werden:
+Daraus kann nun ein \textit{JSON}-Objekt erstellt werden:
 
 \begin{figure}[thp]
 \begin{lstlisting}[style=json]
@@ -102,18 +102,18 @@ json jstate = json::parse(jstr);
 \end{lstlisting}
 
 \centering
-\caption{JSON-Objekt erstellen, FSM.cpp, Z.37}
+\caption{\textit{JSON}-Objekt erstellen, \texttt{FSM.cpp}, Z.37}
 \end{figure}
 
 
-Für ein solches JSON-Objekt hatten wir bereits in den Zustands- und
+Für ein solches \textit{JSON}-Objekt hatten wir bereits in den Zustands- und
 Transitionsklassen Methoden implementiert, die daraus konkrete Objekte für unsere
-FSM erstellen können (\textbf{Transition.cpp} / \textbf{State.cpp}).
-Hier kann, an Hand der Information die unter dem Schlüssel \texttt{type} im JSON-Objekt
+FSM erstellen können (\texttt{Transition.cpp} / \texttt{State.cpp}).
+Hier kann, an Hand der Information die unter dem Schlüssel \texttt{type} im \textit{JSON}-Objekt
 gespeichert ist, entschieden werden, welche Art von Zustand/Transition vorliegt
 und der entsprechende Konstruktor aufgerufen werden.
 Im Falle eines Zustandes ist das Prozedere des Einlesens beendet und das
-Zustandsobjekt wird in einem Array am Index seiner \textit{id} gespeichert.
+Zustandsobjekt wird in einem Array am Index seiner \texttt{id} gespeichert.
 
 \begin{figure}[thp]
 \begin{lstlisting}
@@ -121,7 +121,7 @@ states[(int)jstate["id"]] = state;
 
 \end{lstlisting}
 \centering
-\caption{Array mit Zuständen, FSM.cpp, Z.39}
+\caption{Array mit Zuständen, \texttt{FSM.cpp}, Z.39}
 \end{figure}
 
 
@@ -138,6 +138,6 @@ states[from]->addTransition(trans);
 
 \end{lstlisting}
 \centering
-\caption{Behandlung von Transitionen, FSM.cpp, Z.53-56}
+\caption{Behandlung von Transitionen, \texttt{FSM.cpp}, Z.53-56}
 \end{figure}
 

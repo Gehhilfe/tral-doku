@@ -31,7 +31,7 @@
 \contentsline {section}{\numberline {9}JSON}{21}
 \contentsline {section}{\numberline {10}Graphische Programmierung}{22}
 \contentsline {subsection}{\numberline {10.1}UMLet - Das Programm}{22}
-\contentsline {subsection}{\numberline {10.2}uxf-Datei in JSON-Format umwandeln}{23}
+\contentsline {subsection}{\numberline {10.2}uxf-Datei in \textit {JSON}-Format umwandeln}{23}
 \contentsline {subsection}{\numberline {10.3}Einlesen einer JSON-Datei}{23}
 \contentsline {section}{\numberline {11}Fazit}{25}
 \contentsline {subsection}{\numberline {11.1}Das Fahrzeug}{25}

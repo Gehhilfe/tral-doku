@@ -16,41 +16,37 @@ Ein Regelkreis sorgt dafür, dass ein System in einen stabilen Zustand überfüh
 Anfangs haben wir versucht, das Regelverhalten durch einen PID-Regler abzubilden, jedoch führten Tests und Hinweise der Gruppe \textit{Nullpointer} des vergangenen Semesters zu einer Vernachlässigung des \textit{I}-Anteils. Generell sorgt der \textit{P}-Anteil für eine proportionale Verstärkung der Regelabweichung. Der \textit{D}-Anteil sorgt für ein differenzierendes Verhalten, ist also abhängig von der Änderungsgeschwindigkeit der Regelabweichung.
 Der vernachlässigte \textit{I}-Anteil sorgt für eine zeitliche Integration der Regelabweichung. Dies führt bei dem Auto zu einer sich mit höherem \textit{I}-Anteil einstellenden Trägheit, die das Auto unflexibler macht.
 
-Der Basiscode, mit dem der Regler implementiert wird, ist in der Klasse \textit{BasicFollowWall} (Zeile 53) zu sehen:
-<<<<<<< HEAD
-\begin{figure}[thp]
-	\begin{lstlisting}[style=json]
-=======
+Der Basiscode, mit dem der Regler implementiert wird, ist in der Klasse \texttt{BasicFollowWall} zu sehen:
 
-\begin{lstlisting}
->>>>>>> 439ab47fd1b5943f004ddf23b66e1bc1d10c4839
+\begin{figure}[H]
+\begin{lstlisting}[style=json]
 double y = _p * e + _esum * _i * PID_S + _d * (e - _eold)*PID_INVS;
 \end{lstlisting}
 \centering
-\caption{Array mit Zuständen, FSM.cpp, Z.39}
+\caption{Reglerimplementierung, \texttt{BasicFollowWall.cpp}, Z.53}
 \end{figure}
 
-Hierbei stellen \textit{PID\_S} und \textit{PID\_INVS} Konstanten dar (0.0125 und 80). \textit{\_p} ist der Proportionalanteil, \textit{\_i} der Integralanteil und \textit{\_d} der Differentialanteil. e ist die Eingangsgröße, \textit{\_esum} die aufaddierten Wandabstände der vergangenen Durchläufe und \textit{\_eold} der Wert des letzten Durchlaufes. \textit{y} ist der daraus berechnete Lenkeinschlag.
+Hierbei stellen \texttt{PID\_S} und \texttt{PID\_INVS} Konstanten dar (0.0125 und 80). \texttt{\_p} ist der Proportionalanteil, \texttt{\_i} der Integralanteil und \texttt{\_d} der Differentialanteil. e ist die Eingangsgröße, \texttt{\_esum} die aufaddierten Wandabstände der vergangenen Durchläufe und \texttt{\_eold} der Wert des letzten Durchlaufes. \texttt{y} ist der daraus berechnete Lenkeinschlag.
 \newline
 \newline
-Mittels des oben vorgestellten \textit{PD}-Reglers wird im Zustand \textit{BasicFollowWall} das Geradeausfahren implementiert. Erste Tests haben gezeigt, das entgegen der Erwartungen auch Kurven mit dem gleichen Zustand umfahren werden können. Daraus ergab sich dann die Einsicht, dass kein neuer Kurvenzustand eingeführt werden musste. Es lassen sich also alle grundlegenden Bewegungen durch eine Konkatenation verschieden parametrisierter Wall-Follow Zustände erreichen. Zudem hat sich herausgestellt, dass Kurven umso besser funktionieren, wenn unmittelbar vorher die Geschwindigkeit gedrosselt wird und im Anschluss ein größerer Wandabstand gewählt wird, da sonst die Gefahr besteht, dass die Ultraschallsensoren einen zu steilen Winkel zur Wand haben. 
-Nun ist es also möglich mit einem einzigen Zustand (BasicFollowWall) die grundlegenden Bewegungen (Geradeausfahren, Kurvenfahren) abzudecken. Als Transitionen zwischen den Zuständen haben wir vier Optionen implementiert: \textit{Always, Distance, Finished, SensorLevel}. 
+Mittels des oben vorgestellten \textit{PD}-Reglers wird im Zustand \texttt{BasicFollowWall} das Geradeausfahren implementiert. Erste Tests haben gezeigt, das entgegen der Erwartungen auch Kurven mit dem gleichen Zustand umfahren werden können. Daraus ergab sich dann die Einsicht, dass kein neuer Kurvenzustand eingeführt werden musste. Es lassen sich also alle grundlegenden Bewegungen durch eine Konkatenation verschieden parametrisierter Wall-Follow Zustände erreichen. Zudem hat sich herausgestellt, dass Kurven umso besser funktionieren, wenn unmittelbar vorher die Geschwindigkeit gedrosselt wird und im Anschluss ein größerer Wandabstand gewählt wird, da sonst die Gefahr besteht, dass die Ultraschallsensoren einen zu steilen Winkel zur Wand haben. 
+Nun ist es also möglich mit einem einzigen Zustand \texttt{BasicFollowWall} die grundlegenden Bewegungen (Geradeausfahren, Kurvenfahren) abzudecken. Als Transitionen zwischen den Zuständen haben wir vier Optionen implementiert: \texttt{Always, Distance, Finished, SensorLevel}. 
 \begin{itemize}
-	\item \textbf{Always}: Diese Transition feuert sofort.
-	\item \textbf{Distance}: Diese Transition feuert nach der übergebenen Distanz. Die aktuelle Distanz wird immer über die Hall-Sensoren aus dem aktuellen Maschinen-Zustand (\texttt{MachineState}) ausgelesen. 
-	\item \textbf{Finished}: Um zu feuern, muss die Methode \textit{isFinished()} des vorangegangenen Zustands \textit{true} zurückgeben. Diese Transition ist also nur möglich, wenn der vorige Zustand das Interface \textit{IFinishable} implementiert. 
-	\item \textbf{SensorLevel}:	SensorLevel ist die meistgenutzte Transition. Sie feuert immer dann, wenn ein vorgegebener Sensorwert über oder unterschritten wurde. Diese Transition kann Werte aller drei Ultraschallsensoren als Referenz nehmen und sowohl bei Über- oder Unterschreiten eines Grenzwertes aktiv werden. 
+	\item \texttt{Always}: Diese Transition feuert sofort.
+	\item \texttt{Distance}: Diese Transition feuert nach der übergebenen Distanz. Die aktuelle Distanz wird immer über die Hall-Sensoren aus dem aktuellen Maschinen-Zustand (\texttt{MachineState}) ausgelesen. 
+	\item \texttt{Finished}: Um zu feuern, muss die Methode \texttt{isFinished()} des vorangegangenen Zustands \texttt{true} zurückgeben. Diese Transition ist also nur möglich, wenn der vorige Zustand das Interface \texttt{IFinishable} implementiert. 
+	\item \texttt{SensorLevel}:	\texttt{SensorLevel} ist die meistgenutzte Transition. Sie feuert immer dann, wenn ein vorgegebener Sensorwert über oder unterschritten wurde. Diese Transition kann Werte aller drei Ultraschallsensoren als Referenz nehmen und sowohl bei Über- oder Unterschreiten eines Grenzwertes aktiv werden. 
 \end{itemize}
-Neben dem BasicFollowWall-State sind noch einige weitere States implementiert, die jeweils spezielle Aufgaben erfüllen und im Folgenden knapp vorgestellt werden:
+Neben dem \texttt{BasicFollowWall}-State sind noch einige weitere States implementiert, die jeweils spezielle Aufgaben erfüllen und im Folgenden knapp vorgestellt werden:
 \begin{itemize}
-	\item \textbf{ApproachPoint}: Es kann ein Punkt übergeben werden, der dann geregelt angefahren wird. Dieser Zustand wurde von uns dafür erstellt, einen Punkt einen Meter vor einem ArUco-Tor anzufahren.
-	\item \textbf{ArucoGateCenter}: Dieser Zustand richtet das Auto aus, wenn es vor einem ArUco-Tor steht, um das Tor anschließend gerade zu durchfahren. Dies ist nötig, da das Auto nach Transition aus dem ApproachPoint-Zustand nicht rechtwinklig zur Verbindungsgeraden der beiden Marker-Mittelpunkte ausgerichtet ist.
-	\item \textbf{FollowWall}: FollowWall ist eine Modifikation des BasicFollowWall-Zustandes. Ziel war, dass die Regelung Türrahmen ignoriert, sodass sich das Auto anschließend nicht stark aufschaukelt. Dies wurden erreicht, indem Abweichungen der Ultraschallsensorwerte, die größer als 2cm sind, ignoriert werden. Dies bringt den Vorteil mit sich, dass das Auto sehr stabil gerade aus fährt. Nachteilig ist jedoch, dass es nicht mehr oder nur noch sehr schwach auf größere Änderungen der Umgebung reagiert. Zur Erkennung von Kurven ist dies jedoch kein Problem, da diese ja in der folgenden Transition getriggert werden.
-	\item \textbf{FollowWallRamp}: Dieser Zustand ermöglicht eine Abstandsregelung zu einer das Auto umgebenden Wand nach einer linearen Funktion. Er ermöglicht somit z.B. einen Spurwechsel oder das Umfahren von Hindernissen.
-	\item \textbf{FSMState}: Dieser Zustand ermöglicht das Einbinden von Zustandsautomaten als eigenen Zustand in einer FSM. Dies schafft eine sehr starke Abstraktion, sodass eine Zustandsfolge, z.B. zur Kurvenfahrt, abstrakt eingebunden werden kann und die Größe des Gesamtautomaten überschaubar bleibt.
-	\item \textbf{Idle}: Dieser Zustand ändert nichts am zustand des Autos. 
-	\item \textbf{Motor}: Hier fährt das Auto einfach mit festgelegter Geschwindigkeit eine festgelegte Distanz geradeaus.
-	\item \textbf{Stop}: Dieser Zustand stoppt das Auto.
+	\item \texttt{ApproachPoint}: Es kann ein Punkt übergeben werden, der dann geregelt angefahren wird. Dieser Zustand wurde von uns dafür erstellt, einen Punkt einen Meter vor einem ArUco-Tor anzufahren.
+	\item \texttt{ArucoGateCenter}: Dieser Zustand richtet das Auto aus, wenn es vor einem ArUco-Tor steht, um das Tor anschließend gerade zu durchfahren. Dies ist nötig, da das Auto nach Transition aus dem \texttt{ApproachPoint}-Zustand nicht rechtwinklig zur Verbindungsgeraden der beiden Marker-Mittelpunkte ausgerichtet ist.
+	\item \texttt{FollowWall}: \texttt{FollowWall} ist eine Modifikation des \texttt{BasicFollowWall}-Zustandes. Ziel war, dass die Regelung Türrahmen ignoriert, sodass sich das Auto anschließend nicht stark aufschaukelt. Dies wurden erreicht, indem Abweichungen der Ultraschallsensorwerte, die größer als 2cm sind, ignoriert werden. Dies bringt den Vorteil mit sich, dass das Auto sehr stabil gerade aus fährt. Nachteilig ist jedoch, dass es nicht mehr oder nur noch sehr schwach auf größere Änderungen der Umgebung reagiert. Zur Erkennung von Kurven ist dies jedoch kein Problem, da diese ja in der folgenden Transition getriggert werden.
+	\item \texttt{FollowWallRamp}: Dieser Zustand ermöglicht eine Abstandsregelung zu einer das Auto umgebenden Wand nach einer linearen Funktion. Er ermöglicht somit z.B. einen Spurwechsel oder das Umfahren von Hindernissen.
+	\item \texttt{FSMState}: Dieser Zustand ermöglicht das Einbinden von Zustandsautomaten als eigenen Zustand in einer FSM. Dies schafft eine sehr starke Abstraktion, sodass eine Zustandsfolge, z.B. zur Kurvenfahrt, abstrakt eingebunden werden kann und die Größe des Gesamtautomaten überschaubar bleibt.
+	\item \texttt{Idle}: Dieser Zustand ändert nichts am zustand des Autos. 
+	\item \texttt{Motor}: Hier fährt das Auto einfach mit festgelegter Geschwindigkeit eine festgelegte Distanz geradeaus.
+	\item \texttt{Stop}: Dieser Zustand stoppt das Auto.
 \end{itemize}
 Mittels der vorgestellten Konstrukte kann nun eine beliebige Abfolge von Aktivitäten des Autos abgebildet werden. Es ist möglich, ihm eine Strecke oder alternativ ein Verhalten einzuprogammieren. Ein autonomes Verhalten wird z.B. über mehrere parallele Zweige im Automaten realisiert. Als Beispiel fährt das Auto geradeaus und falls ein Hindernis auftritt, feuert eine Transition, die mehrere Zustände zu dessen Umfahren triggert. Werden Marker erkannt, könnte eine andere Transition feuern und je nach ID ein Verhalten des Autos auslösen.
 
@@ -59,7 +55,7 @@ Durch die vorgestellte Modularität ist das autonome Verhalten des Autos um fast
 %%%%%%
 \subsection{Erkennung ArUco-Marker}
 Die Erkennung der ArUco-Marker ist durch einen ROS-Node implementiert. Dort haben wir zur Kamerakalibrierung eine Kombination der ROS-internen Kalibrierung und der Kalibrierung der  \textbf{OpenCV}\footnote[1]{http://opencv.org/} Open Source Software Bibliothek verwendet. Zur Kalibrierung wird ein Schachbrettmuster verwendet. Dabei übergibt man der OpenCV-Routine die Anzahl der Kästchen und deren Größe. Nachdem die Eckpunkte erkannt sind, werden verschiedene Orientierungen im Raum dargestellt, um eine robuste Kalibrierung zu erreichen. Anhand der Zuordnungen von Raum zu Bildkoordinaten kann nun die Kalibrierungsmatrix berechnet werden. 
-OpenCV erkennt nun die ArUco-Marker und kann deren Position errechnen. Die Daten dazu werden anschließend in einer ROS-Topic gepublisht. Unserer Anwendungssoftware stehen so die genauen Bildkoordinaten der Marker und ihre Ausrichtung im Raum zur Verfügung.  
+\textit{OpenCV} erkennt nun die ArUco-Marker und kann deren Position errechnen. Die Daten dazu werden anschließend in einer \textit{ROS}-Topic gepublisht. Unserer Anwendungssoftware stehen so die genauen Bildkoordinaten der Marker und ihre Ausrichtung im Raum zur Verfügung.  
 
 %%%%%%
 \subsection{Durchfahren von Toren}
@@ -71,12 +67,13 @@ Dazu gibt es verschiedene mögliche Ansätze. Zuerst war geplant, eine S-Kurve z
 Daher haben wir uns entschlossen, wie oben bereits erwähnt, eine lineare Regelung zu implementieren. Dies bedingt jedoch (im Gegenteil zur Lösung mittels S-Kurve) eine Wand auf einer Seite des Fahrzeuges, zu der es sich relativ bewegen kann. 
 \newline
 \newline
-Der Regler um eine lineare Funktion erhält als Eingangsgrößen den Startabstand, den Endabstand, sowie die Strecke in Hallsensoreinheiten. Anhand dieser Werte wird, wie auch im normalen \textit{BasicFollowWall}-State, eine Regelung durchgeführt. Unterschied ist diesmal jedoch, dass sich der Abstand zur Wand, der sonst ja konstant ist, linear ändert. Das heißt, dass die Regelung mit zunehmender zurückgelegter Strecke um einen weiter von der Wand entfernten Abstand regelt. 
+Der Regler um eine lineare Funktion erhält als Eingangsgrößen den Startabstand, den Endabstand, sowie die Strecke in Hallsensoreinheiten. Anhand dieser Werte wird, wie auch im normalen \texttt{BasicFollowWall}-State, eine Regelung durchgeführt. Unterschied ist diesmal jedoch, dass sich der Abstand zur Wand, der sonst ja konstant ist, linear ändert. Das heißt, dass die Regelung mit zunehmender zurückgelegter Strecke um einen weiter von der Wand entfernten Abstand regelt. 
 \newline
 \newline
 Diese Funktion wurde im \texttt{FollowWallRamp}-State implementiert. In diesem State gibt es eine Funktion, \texttt{setTarget(Vec3f target)}, die den Zielpunkt der Regelung festlegt. Dazu wird, je nach Wandseite, die x-Koordinate den übergebenen Parametern angepasst. Dabei wird die x-Koordinate des Ziels um den aktuellen Wandabstand erhöht bzw. erniedrigt, sodass sie den wirklichen Wandabstand enthält. Des Weiteren wird der y-Abstand des Zielpunktes für die messbaren Halldistanzwerte normalisiert.
 \newpage
-\begin{lstlisting}
+\begin{figure}[H]
+\begin{lstlisting}[style=json]
 void FollowWallRamp::setTarget(Vec3f target)
 {
 	_finished = false;
@@ -87,10 +84,14 @@ void FollowWallRamp::setTarget(Vec3f target)
 	_distance = 1500/1.60f*target[2];
 }
 \end{lstlisting}
+\centering
+\caption{Anpassen des Wandabstandes, \texttt{FollowWallRamp.cpp}, Z.19}
+\end{figure}
 
 In der \texttt{tick()}-Methode sind nur folgende fünf Befehle relevant:
 
-\begin{lstlisting}
+\begin{figure}[H]
+\begin{lstlisting}[style=json]
 unsigned int curDistance = mstate.getHallDistance()-_startDistance;
 
 if(curDistance >= _distance)
@@ -101,8 +102,11 @@ _clearance = m*curDistance + _startClearance;
 ...
 BasicFollowWall::tick();
 \end{lstlisting}
+\centering
+\caption{Reglungsparemeter aktualisieren, \texttt{FollowWallRamp.cpp}, Z.58}
+\end{figure}
 
-Hier wird die aktuell zurückgelegte Distanz aktualisiert und mit der Zieldistanz verglichen. Sollte diese erreicht sein, wird die nächste Transition gefeuert, indem der Wert \texttt{\_finished}, der aufgrund der Implementierung des \texttt{IFinishable}-Interfaces vorhanden sein muss, gesetzt wird. Ansonsten wird die aktuelle Steigung berechnet, sowie mit ihr der aktuelle Wandabstand \texttt{\_clearance}. Mit diesem wird am Ende der \textit{tick()}-Methode des \texttt{FollowWallRamp}-Zustands die \texttt{tick()}-Methode des \texttt{BasicFollowWall}-Zustands aufgerufen. Dies sorgt, wie im Standardfall auch, für eine Regelung um den festgelegten Wandabstand. 
+Hier wird die aktuell zurückgelegte Distanz aktualisiert und mit der Zieldistanz verglichen. Sollte diese erreicht sein, wird die nächste Transition gefeuert, indem der Wert \texttt{\_finished}, der aufgrund der Implementierung des \texttt{IFinishable}-Interfaces vorhanden sein muss, gesetzt wird. Ansonsten wird die aktuelle Steigung berechnet, sowie mit ihr der aktuelle Wandabstand \texttt{\_clearance}. Mit diesem wird am Ende der \texttt{tick()}-Methode des \texttt{FollowWallRamp}-Zustands die \texttt{tick()}-Methode des \texttt{BasicFollowWall}-Zustands aufgerufen. Dies sorgt, wie im Standardfall auch, für eine Regelung um den festgelegten Wandabstand. 
 \newline
 Wie man sehen kann, ist für die Regelung nach einer linearen Funktion nur eine geringe Änderung des vorhandenen Codes nötig gewesen. 
 \newline
@@ -115,7 +119,7 @@ Wie man sehen kann, ist für die Regelung nach einer linearen Funktion nur eine 
 \end{figure}
 
 Diese neue Funktion des Autos wurde nun von uns verwendet, um ein durch die Kamera erkanntes ArUco-Tor, dessen Koordinaten im Raum übergeben wurden, auf einen Punkt einen Meter vor dem Tor anzusteuern.
-Weiter oben wurde bereits der Umstand erwähnt, dass es mit einer S-Kurve möglich ist, eine gerade Ausrichtung des Autos zu erreichen. Dies ist mit der Rampenfunktion nicht möglich. Vielmehr ist die Ausrichtung fast nie gleich, da durch die Regelung unterschiedliche Lenkwinkel angenommen werden. In der Regel ist das Auto jedoch in Fahrtrichtung um einen geringen Winkel zwischen $0^\circ$ und $45^\circ$ zur Parallelen zur Wand durch den Tormittelpunkt versetzt. Daher muss die gefeuerte Transition nun noch in zwei weitere Zustände, einen zum Ausrichten des Autos (ArucoGateCenter) und einen zum geradeaus fahren (Motor), überführen. Ersterer macht nichts anderes, als zu prüfen, ob der Tormittelpunkt auf der linken oder rechten Seite des Autos ist und den Lenkeinschlag in entsprechender Richtung voll auszulenken und das Auto so weit zu bewegen, bis es ausgerichtet ist. Der Motor-State liest aus seiner JSON-Konfiguration den übergebenen Lenkeinschlag und die Geschwindigkeit und fährt mit dieser Konfiguration so lange, bis die folgende Transition feuert. 
+Weiter oben wurde bereits der Umstand erwähnt, dass es mit einer S-Kurve möglich ist, eine gerade Ausrichtung des Autos zu erreichen. Dies ist mit der Rampenfunktion nicht möglich. Vielmehr ist die Ausrichtung fast nie gleich, da durch die Regelung unterschiedliche Lenkwinkel angenommen werden. In der Regel ist das Auto jedoch in Fahrtrichtung um einen geringen Winkel zwischen $0^\circ$ und $45^\circ$ zur Parallelen zur Wand durch den Tormittelpunkt versetzt. Daher muss die gefeuerte Transition nun noch in zwei weitere Zustände, einen zum Ausrichten des Autos (ArucoGateCenter) und einen zum geradeaus fahren (Motor), überführen. Ersterer macht nichts anderes, als zu prüfen, ob der Tormittelpunkt auf der linken oder rechten Seite des Autos ist und den Lenkeinschlag in entsprechender Richtung voll auszulenken und das Auto so weit zu bewegen, bis es ausgerichtet ist. Der Motor-State liest aus seiner \textit{JSON}-Konfiguration den übergebenen Lenkeinschlag und die Geschwindigkeit und fährt mit dieser Konfiguration so lange, bis die folgende Transition feuert. 
 \newline
 \newline
 Wie man sehen kann, benötigen wir lediglich drei Zustände, um die Tordurchfahrt zu realisieren. Dank unserer FSM-Struktur ist es uns so einfach möglich, z.B. indem das Erkennen und Durchfahren eines ArUco-Tores parallel zu einem anderen Pfad geschaltet wird, flexibel auf auftauchende Tore zu reagieren und diese zu durchfahren. 
