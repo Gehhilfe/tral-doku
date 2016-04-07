@@ -43,13 +43,10 @@ gespeichert. Sofern man das Tool "xml2json" bereits heruntergeladen und
 kompiliert hat, lassen sich diese Dateien mittels des einfachen Konsolen-Befehls
 
 \begin{figure}[thp]
-\begin{tabular}{c}
 \begin{lstlisting}[style=json]
-
 ./xml2json automat.uxf >> automat.json
 
 \end{lstlisting}
-\end{tabular}
 \centering
 %\caption{Aufbau einer einfachen JSON-Datei}
 \end{figure}
@@ -73,13 +70,10 @@ Mittels der Anweisung "`\textit{j["`diagram"']["`element"']}"' greift man
 darauf zu und kann mittels des Iterators "`\textit{auto jelem}"' darüber iterieren.
 
 \begin{figure}[thp]
-\begin{tabular}{c}
 \begin{lstlisting}[style=json]
-
 for(auto jelem: j["diagram"]["element"])
 
 \end{lstlisting}
-\end{tabular}
 \centering
 \caption{FSM.cpp, Zeile 32}
 \end{figure}
@@ -103,13 +97,11 @@ aufgebaut und enthält Eigenschaften mit Schlüsselwort und zugeordnetem Wert.
 Daraus kann nun ein JSON-Objekt erstellt werden:
 
 \begin{figure}[thp]
-\begin{tabular}{c}
 \begin{lstlisting}[style=json]
-
 json jstate = json::parse(jstr);
 
 \end{lstlisting}
-\end{tabular}
+
 \centering
 \caption{JSON-Objekt erstellen, FSM.cpp, Z.37}
 \end{figure}
@@ -125,13 +117,10 @@ Im Falle eines Zustandes ist das Prozedere des Einlesens beendet und das
 Zustandsobjekt wird in einem Array am Index seiner „id“ gespeichert.
 
 \begin{figure}[thp]
-\begin{tabular}{c}
 \begin{lstlisting}[style=json]
-
 states[(int)jstate["id"]] = state;
 
 \end{lstlisting}
-\end{tabular}
 \centering
 \caption{Array mit Zuständen, FSM.cpp, Z.39}
 \end{figure}
@@ -143,15 +132,12 @@ Vorgänger und Nachfolgezustand gesetzt werden. Ebenso wird dem Vorgängerzustan
 die von ihm abgehende Transition zugeordnet.
 
 \begin{figure}[thp]
-\begin{tabular}{c}
 \begin{lstlisting}[style=json]
-
 trans->setOwner(states[from]);
 trans->setTarget(states[to]);
 states[from]->addTransition(trans);
 
 \end{lstlisting}
-\end{tabular}
 \centering
 \caption{Behandlung von Transitionen, FSM.cpp, Z.53-56}
 \end{figure}

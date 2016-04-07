@@ -69,12 +69,12 @@ Diese Funktion wurde im \textit{FollowWallRamp}-State implementiert. In diesem S
 \begin{lstlisting}
 void FollowWallRamp::setTarget(Vec3f target)
 {
-_finished = false;
-if(_wallSide == WallSide::Right)
-_targetClearance = -(target[0])+_startClearance;
-else
-_targetClearance = target[0]+_startClearance;
-_distance = 1500/1.60f*target[2];
+	_finished = false;
+	if(_wallSide == WallSide::Right)
+		_targetClearance = -(target[0])+_startClearance;
+	else
+		_targetClearance = target[0]+_startClearance;
+	_distance = 1500/1.60f*target[2];
 }
 \end{lstlisting}
 
@@ -84,7 +84,7 @@ In der \textit{tick()}-Methode sind nur folgende fünf Befehle relevant:
 unsigned int curDistance = mstate.getHallDistance()-_startDistance;
 
 if(curDistance >= _distance)
-_finished = true;
+	_finished = true;
 
 double m = (_targetClearance-_startClearance)/(_distance);
 _clearance = m*curDistance + _startClearance;

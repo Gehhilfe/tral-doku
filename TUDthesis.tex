@@ -19,6 +19,7 @@ accentcolor=tud1c,
 \urlstyle{rm}
 
 %listings
+
 \usepackage{listings}
 \usepackage{xcolor}
 \lstset { %
@@ -26,6 +27,8 @@ accentcolor=tud1c,
 	backgroundcolor=\color{black!5}, % set backgroundcolor
 	basicstyle=\footnotesize,% basic font setting
 }
+
+
 
 \newcommand{\getmydate}{%
 \iflanguage{ngerman}{%
@@ -53,6 +56,8 @@ accentcolor=tud1c,
  
 \setinstitutionlogo[height]{logo/ESlogo.png}
 
+\setlength{\parindent}{0pt} 
+
 \begin{document}
 	\counterwithin{lstlisting}{section}
   \thesistitle{Projektseminar Echtzeitsysteme}%
@@ -61,7 +66,7 @@ accentcolor=tud1c,
   %do not add your student id!
   %\studentidx{1145456}
 	\thesisnumber{ES-B-0060}
-  \referee{Prof. Dr. rer. nat. A. Schürr}{Géza Kulcsar}
+  \referee{Prof. Dr. rer. nat. A. Schürr}{Géza Kulcsár, MSc.}
 	
   \iflanguage{english}{
 		\department{	\mbox{Department of Electrical Engineering}\\ and Information Technology (FB18)\\\\Adjunct Member Department of\\ Computer Science (FB20)\\\\Prof. Dr. rer. nat. A. Schürr\\\ Merckstraße 25\\64283 Darmstadt\\\\www.es.tu-darmstadt.de}
@@ -99,7 +104,7 @@ accentcolor=tud1c,
 	%%% Hier stehen alle von uns eingebundenen Kapitel	
 	\input{chapters/Einleitung}
 	\cleardoublepage
-	\input{chapters/GrundlegendesZurHW}a
+	\input{chapters/GrundlegendesZurHW}
 	\cleardoublepage
 	\input{chapters/GrundlegendesZuROS}
 	\cleardoublepage
